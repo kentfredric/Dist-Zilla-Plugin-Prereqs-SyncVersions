@@ -36,8 +36,8 @@ my %module_build_args = (
     "File::Spec" => 0,
     "IO::Handle" => 0,
     "IPC::Open3" => 0,
-    "Test::More" => "0.98",
-    "version" => 0
+    "Module::Build" => "0.4007",
+    "Test::More" => "0.98"
   }
 );
 

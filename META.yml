@@ -8,7 +8,6 @@ build_requires:
   IPC::Open3: 0
   Module::Build: 0.4007
   Test::More: 0.98
-  version: 0
 configure_requires:
   Module::Build: 0.4007
 dynamic_config: 0
