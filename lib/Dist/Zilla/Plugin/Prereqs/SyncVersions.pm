@@ -9,7 +9,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Prereqs::SyncVersions::VERSION = '0.001000';
 }
 
-# ABSTRACT: Homogenise prerequisites so dependency versions are consistent
+# ABSTRACT: Homogenize prerequisites so dependency versions are consistent
 
 use Moose;
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
@@ -62,13 +62,15 @@ sub _set_module_version {
   my ( $self, $module, $version ) = @_;
   if ( not exists $self->_max_versions->{$module} ) {
     $self->_max_versions->{$module} = $self->_versionify($version);
+    return;
   }
   my $comparator = $self->_versionify($version);
   my $current    = $self->_max_versions->{$module};
   if ( $current < $comparator ) {
-    $self->log_debug( "Version upgrade on : " . $module );
+    $self->log_debug([ 'Version upgrade on : %s', $module ]);
     $self->_max_versions->{$module} = $comparator;
   }
+  return;
 }
 
 sub _get_module_version {
@@ -166,7 +168,7 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Prereqs::SyncVersions - Homogenise prerequisites so dependency versions are consistent
+Dist::Zilla::Plugin::Prereqs::SyncVersions - Homogenize prerequisites so dependency versions are consistent
 
 =head1 VERSION
 
@@ -182,9 +184,9 @@ Note: This must come B<after> packages that add their own prerequisites in order
 
 =head1 DESCRIPTION
 
-This module exists to pose mostly as a workaround for potential bugs in downstream toolchains.
+This module exists to pose mostly as a workaround for potential bugs in downstream tool-chains.
 
-Namely, CPAN.pm is confused when it sees:
+Namely, C<CPAN.pm> is confused when it sees:
 
     runtime.requires : Foo >= 5.0
     test.requires    : Foo >= 6.0
@@ -193,9 +195,9 @@ It doesn't know what to do.
 
 This is an easy enough problem to solve if you're using C<[Prereqs]> directly,
 and C<[AutoPrereqs]> already does the right thing, but it gets messier
-when you're working with L<< plugins that inject their own prereqs|https://github.com/dagolden/Path-Tiny/commit/c620171db96597456a182ea6088a24d8de5debf6 >>
+when you're working with L<< plugins that inject their own C<prereqs>|https://github.com/dagolden/Path-Tiny/commit/c620171db96597456a182ea6088a24d8de5debf6 >>
 
-So this plugin will homogenise dependencies to be the same version in all phases
+So this plugin will homogenize dependencies to be the same version in all phases
 which infer the dependency, matching the largest one found, so the above becomes:
 
     runtime.requires : Foo >= 6.0

@@ -1,5 +1,5 @@
 {
-   "abstract" : "Homogenise prerequisites so dependency versions are consistent",
+   "abstract" : "Homogenize prerequisites so dependency versions are consistent",
    "author" : [
       "Kent Fredric <kentfredric@gmail.com>"
    ],

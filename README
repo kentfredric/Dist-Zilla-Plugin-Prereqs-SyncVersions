@@ -1,5 +1,5 @@
 NAME
-    Dist::Zilla::Plugin::Prereqs::SyncVersions - Homogenise prerequisites so
+    Dist::Zilla::Plugin::Prereqs::SyncVersions - Homogenize prerequisites so
     dependency versions are consistent
 
 VERSION
@@ -15,9 +15,9 @@ SYNOPSIS
 
 DESCRIPTION
     This module exists to pose mostly as a workaround for potential bugs in
-    downstream toolchains.
+    downstream tool-chains.
 
-    Namely, CPAN.pm is confused when it sees:
+    Namely, "CPAN.pm" is confused when it sees:
 
         runtime.requires : Foo >= 5.0
         test.requires    : Foo >= 6.0
@@ -26,11 +26,11 @@ DESCRIPTION
 
     This is an easy enough problem to solve if you're using "[Prereqs]"
     directly, and "[AutoPrereqs]" already does the right thing, but it gets
-    messier when you're working with plugins that inject their own prereqs
+    messier when you're working with plugins that inject their own "prereqs"
     <https://github.com/dagolden/Path-Tiny/commit/c620171db96597456a182ea608
     8a24d8de5debf6>
 
-    So this plugin will homogenise dependencies to be the same version in
+    So this plugin will homogenize dependencies to be the same version in
     all phases which infer the dependency, matching the largest one found,
     so the above becomes:
 
