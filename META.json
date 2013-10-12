@@ -66,6 +66,17 @@
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Prereqs-SyncVersions/issues"
+      },
+      "homepage" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Prereqs-SyncVersions",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Prereqs-SyncVersions.git",
+         "web" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Prereqs-SyncVersions"
+      }
+   },
    "version" : "0.001000",
    "x_BuiltWith" : {
       "modules" : {

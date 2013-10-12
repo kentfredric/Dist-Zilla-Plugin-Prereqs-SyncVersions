@@ -29,6 +29,10 @@ requires:
   strict: 0
   version: 0
   warnings: 0
+resources:
+  bugtracker: https://github.com/kentfredric/Dist-Zilla-Plugin-Prereqs-SyncVersions/issues
+  homepage: https://github.com/kentfredric/Dist-Zilla-Plugin-Prereqs-SyncVersions
+  repository: https://github.com/kentfredric/Dist-Zilla-Plugin-Prereqs-SyncVersions.git
 version: 0.001000
 x_BuiltWith:
   modules:

@@ -16,6 +16,7 @@ use MooseX::Types::Moose qw( HashRef ArrayRef Str );
 with 'Dist::Zilla::Role::PrereqSource';
 
 
+
 has applyto_phase => (
   is => ro =>,
   isa => ArrayRef [Str] =>,
@@ -172,6 +173,14 @@ Dist::Zilla::Plugin::Prereqs::SyncVersions - Homogenise prerequisites so depende
 version 0.001000
 
 =head1 SYNOPSIS
+
+    ; <bunch of metaprereq providing modules>
+
+    [Prereqs::SyncVersions]
+
+Note: This must come B<after> packages that add their own prerequisites in order to work as intended.
+
+=head1 DESCRIPTION
 
 This module exists to pose mostly as a workaround for potential bugs in downstream toolchains.
 

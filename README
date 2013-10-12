@@ -6,6 +6,14 @@ VERSION
     version 0.001000
 
 SYNOPSIS
+        ; <bunch of metaprereq providing modules>
+
+        [Prereqs::SyncVersions]
+
+    Note: This must come after packages that add their own prerequisites in
+    order to work as intended.
+
+DESCRIPTION
     This module exists to pose mostly as a workaround for potential bugs in
     downstream toolchains.
 
