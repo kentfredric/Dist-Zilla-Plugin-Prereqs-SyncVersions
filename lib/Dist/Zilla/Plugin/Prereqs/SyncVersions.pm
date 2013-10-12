@@ -70,7 +70,7 @@ sub _set_module_version {
   my $comparator = $self->_versionify($version);
   my $current    = $self->_max_versions->{$module};
   if ( $current < $comparator ) {
-    $self->log_debug([ 'Version upgrade on : %s', $module ]);
+    $self->log_debug( [ 'Version upgrade on : %s', $module ] );
     $self->_max_versions->{$module} = $comparator;
   }
   return;
@@ -260,7 +260,7 @@ You could even add C<conflicts> ... but you really shouldn't.
 
 =head2 C<applyto>
 
-A Multivalue attribute that by default composites the values of 
+A Multivalue attribute that by default composites the values of
 C<applyto_relation> and C<applyto_phase>.
 
 This is if you want to be granular about how you specify phase/relations to process.
