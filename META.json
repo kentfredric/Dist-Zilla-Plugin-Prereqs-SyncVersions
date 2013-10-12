@@ -46,7 +46,7 @@
             "MooseX::Types::Moose" : "0",
             "perl" : "v5.10.0",
             "strict" : "0",
-            "version" : "0",
+            "version" : "0.9901",
             "warnings" : "0"
          }
       },
@@ -55,8 +55,8 @@
             "File::Spec" : "0",
             "IO::Handle" : "0",
             "IPC::Open3" : "0",
-            "Module::Build" : "0.4007",
-            "Test::More" : "0.98"
+            "Test::More" : "0.98",
+            "version" : "0.9901"
          }
       }
    },
@@ -460,33 +460,25 @@
                "Dist::Zilla::Plugin::Prereqs::SyncVersions" : {
                   "applyto" : [
                      "build.requires",
-                     "build.recommends",
-                     "build.suggests",
-                     "test.requires",
-                     "test.recommends",
-                     "test.suggests",
                      "runtime.requires",
-                     "runtime.recommends",
-                     "runtime.suggests",
                      "configure.requires",
-                     "configure.recommends",
-                     "configure.suggests"
+                     "test.requires",
+                     "develop.requires"
                   ],
                   "applyto_phase" : [
                      "build",
-                     "test",
                      "runtime",
-                     "configure"
+                     "configure",
+                     "test",
+                     "develop"
                   ],
                   "applyto_relation" : [
-                     "requires",
-                     "recommends",
-                     "suggests"
+                     "requires"
                   ]
                }
             },
             "name" : "Prereqs::SyncVersions",
-            "version" : "0.1.0"
+            "version" : null
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",

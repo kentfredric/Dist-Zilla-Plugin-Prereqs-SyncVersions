@@ -28,7 +28,7 @@ my %module_build_args = (
     "MooseX::Types::Moose" => 0,
     "perl" => "v5.10.0",
     "strict" => 0,
-    "version" => 0,
+    "version" => "0.9901",
     "warnings" => 0
   },
   "script_files" => [],
@@ -36,8 +36,8 @@ my %module_build_args = (
     "File::Spec" => 0,
     "IO::Handle" => 0,
     "IPC::Open3" => 0,
-    "Module::Build" => "0.4007",
-    "Test::More" => "0.98"
+    "Test::More" => "0.98",
+    "version" => "0.9901"
   }
 );
 

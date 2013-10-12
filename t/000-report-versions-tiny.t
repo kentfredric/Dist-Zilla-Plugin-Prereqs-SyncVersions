@@ -57,7 +57,7 @@ eval { $v .= pmver('Moose','any version') };
 eval { $v .= pmver('MooseX::Types::Moose','any version') };
 eval { $v .= pmver('Test::More','0.98') };
 eval { $v .= pmver('strict','any version') };
-eval { $v .= pmver('version','any version') };
+eval { $v .= pmver('version','0.9901') };
 eval { $v .= pmver('warnings','any version') };
 
 

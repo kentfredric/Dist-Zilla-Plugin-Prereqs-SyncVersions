@@ -27,7 +27,7 @@ has applyto_phase => (
 has applyto_relation => (
   is => ro => isa => ArrayRef [Str],
   lazy    => 1,
-  default => sub { [qw(requires recommends suggests)] },
+  default => sub { [qw(requires)] },
 );
  
  
@@ -69,7 +69,7 @@ sub _set_module_version {
     my $current    = $self->_max_versions->{ $module };
     if ( $current < $comparator ) {
         $self->log("Version upgrade on : " . $module );
-        $self->_max_version->{$module} = $comparator;
+        $self->_max_versions->{$module} = $comparator;
     }
 }
 sub _get_module_version {
