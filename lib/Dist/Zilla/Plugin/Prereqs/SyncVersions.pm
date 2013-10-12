@@ -105,6 +105,7 @@ sub _build__applyto_list {
 sub mvp_multivalue_args { return qw( applyto applyto_relation applyto_phase ) }
  
 sub mvp_aliases { return { 'module' => 'modules' } }
+
 around dump_config => sub {
   my ( $orig, $self ) = @_;
   my $config      = $self->$orig;
@@ -117,31 +118,36 @@ around dump_config => sub {
   return $config;
 };
 
+sub foreach_phase_rel {
+    my ( $self, $prereqs, $callback ) = @_;
+    for my $applyto ( @{ $self->_applyto_list } ) {
+        my ( $phase, $rel ) = @{$applyto};
+        next if not exists $prereqs->{$phase};
+        next if not exists $prereqs->{$phase}->{$rel};
+        $callback->( $phase, $rel , $prereqs->{$phase}->{$rel}->as_string_hash );
+    }
+    return;
+}
+
 sub register_prereqs {
   my ($self)  = @_;
   my $zilla   = $self->zilla;
   my $prereqs = $zilla->prereqs;
   my $guts = $prereqs->cpan_meta_prereqs->{prereqs} || {};
  
-  for my $applyto ( @{ $self->_applyto_list } ) {
-    my ( $phase, $rel ) = @{$applyto};
-    next if not exists $guts->{$phase};
-    next if not exists $guts->{$phase}->{$rel};
-    my $reqs = $guts->{$phase}->{$rel}->as_string_hash;
+  $self->foreach_phase_rel( $guts => sub {
+    my ( $phase, $rel, $reqs ) = @_;
     for my $module ( keys %{$reqs} ) {
       $self->_set_module_version( $module, $reqs->{$module} );
     }
-  }
-  for my $applyto ( @{ $self->_applyto_list } ) {
-    my ( $phase, $rel ) = @{$applyto};
-    next if not exists $guts->{$phase};
-    next if not exists $guts->{$phase}->{$rel};
-    my $reqs = $guts->{$phase}->{$rel}->as_string_hash;
+  });
+  $self->foreach_phase_rel( $guts => sub {
+    my ( $phase, $rel, $reqs ) = @_;
     for my $module ( keys %{$reqs} ) {
       my $v = $self->_get_module_version( $module, $reqs->{$module} );
       $zilla->register_prereqs( { phase => $phase, type => $rel }, $module, $v  );
     }
-  }
+  });
   return $prereqs;
 }
 
