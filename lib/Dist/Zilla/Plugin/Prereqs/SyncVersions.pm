@@ -22,23 +22,20 @@ has applyto_phase => (
   lazy    => 1,
   default => sub { [qw(build test runtime configure)] },
 );
- 
- 
+
 has applyto_relation => (
   is => ro => isa => ArrayRef [Str],
   lazy    => 1,
   default => sub { [qw(requires)] },
 );
- 
- 
+
 has applyto => (
   is => ro =>,
   isa => ArrayRef [Str] =>,
   lazy    => 1,
   builder => _build_applyto =>,
 );
- 
- 
+
 has _applyto_list => (
   is => ro =>,
   isa => ArrayRef [ ArrayRef [Str] ],
@@ -47,34 +44,35 @@ has _applyto_list => (
 );
 
 has _max_versions => (
-    is => ro =>,
-    isa => HashRef,
-    lazy => 1, 
-    default => sub {  {} },
+  is      => ro  =>,
+  isa     => HashRef,
+  lazy    => 1,
+  default => sub { {} },
 );
 
 sub _versionify {
-    my ( $self, $version ) = @_;
-    return $version if ref $version;
-    require version;
-    return version->parse($version);
+  my ( $self, $version ) = @_;
+  return $version if ref $version;
+  require version;
+  return version->parse($version);
 }
 
-sub _set_module_version { 
-    my ( $self, $module, $version ) = @_;
-    if ( not exists $self->_max_versions->{ $module } ) { 
-        $self->_max_versions->{ $module } = $self->_versionify( $version );
-    }
-    my $comparator = $self->_versionify( $version );
-    my $current    = $self->_max_versions->{ $module };
-    if ( $current < $comparator ) {
-        $self->log("Version upgrade on : " . $module );
-        $self->_max_versions->{$module} = $comparator;
-    }
+sub _set_module_version {
+  my ( $self, $module, $version ) = @_;
+  if ( not exists $self->_max_versions->{$module} ) {
+    $self->_max_versions->{$module} = $self->_versionify($version);
+  }
+  my $comparator = $self->_versionify($version);
+  my $current    = $self->_max_versions->{$module};
+  if ( $current < $comparator ) {
+    $self->log_debug( "Version upgrade on : " . $module );
+    $self->_max_versions->{$module} = $comparator;
+  }
 }
+
 sub _get_module_version {
-    my ( $self, $module ) = @_;
-    return $self->_max_versions->{$module};
+  my ( $self, $module ) = @_;
+  return $self->_max_versions->{$module};
 }
 
 sub _build_applyto {
@@ -87,8 +85,7 @@ sub _build_applyto {
   }
   return \@out;
 }
- 
- 
+
 sub _build__applyto_list {
   my $self = shift;
   my @out;
@@ -103,7 +100,7 @@ sub _build__applyto_list {
 }
 
 sub mvp_multivalue_args { return qw( applyto applyto_relation applyto_phase ) }
- 
+
 sub mvp_aliases { return { 'module' => 'modules' } }
 
 around dump_config => sub {
@@ -119,14 +116,14 @@ around dump_config => sub {
 };
 
 sub foreach_phase_rel {
-    my ( $self, $prereqs, $callback ) = @_;
-    for my $applyto ( @{ $self->_applyto_list } ) {
-        my ( $phase, $rel ) = @{$applyto};
-        next if not exists $prereqs->{$phase};
-        next if not exists $prereqs->{$phase}->{$rel};
-        $callback->( $phase, $rel , $prereqs->{$phase}->{$rel}->as_string_hash );
-    }
-    return;
+  my ( $self, $prereqs, $callback ) = @_;
+  for my $applyto ( @{ $self->_applyto_list } ) {
+    my ( $phase, $rel ) = @{$applyto};
+    next if not exists $prereqs->{$phase};
+    next if not exists $prereqs->{$phase}->{$rel};
+    $callback->( $phase, $rel, $prereqs->{$phase}->{$rel}->as_string_hash );
+  }
+  return;
 }
 
 sub register_prereqs {
@@ -134,20 +131,24 @@ sub register_prereqs {
   my $zilla   = $self->zilla;
   my $prereqs = $zilla->prereqs;
   my $guts = $prereqs->cpan_meta_prereqs->{prereqs} || {};
- 
-  $self->foreach_phase_rel( $guts => sub {
-    my ( $phase, $rel, $reqs ) = @_;
-    for my $module ( keys %{$reqs} ) {
-      $self->_set_module_version( $module, $reqs->{$module} );
+
+  $self->foreach_phase_rel(
+    $guts => sub {
+      my ( $phase, $rel, $reqs ) = @_;
+      for my $module ( keys %{$reqs} ) {
+        $self->_set_module_version( $module, $reqs->{$module} );
+      }
     }
-  });
-  $self->foreach_phase_rel( $guts => sub {
-    my ( $phase, $rel, $reqs ) = @_;
-    for my $module ( keys %{$reqs} ) {
-      my $v = $self->_get_module_version( $module, $reqs->{$module} );
-      $zilla->register_prereqs( { phase => $phase, type => $rel }, $module, $v  );
+  );
+  $self->foreach_phase_rel(
+    $guts => sub {
+      my ( $phase, $rel, $reqs ) = @_;
+      for my $module ( keys %{$reqs} ) {
+        my $v = $self->_get_module_version( $module, $reqs->{$module} );
+        $zilla->register_prereqs( { phase => $phase, type => $rel }, $module, $v );
+      }
     }
-  });
+  );
   return $prereqs;
 }
 

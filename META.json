@@ -478,7 +478,7 @@
                }
             },
             "name" : "Prereqs::SyncVersions",
-            "version" : null
+            "version" : "0.1.0"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",

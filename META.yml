@@ -356,7 +356,7 @@ x_Dist_Zilla:
           applyto_relation:
             - requires
       name: Prereqs::SyncVersions
-      version: ~
+      version: 0.1.0
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
