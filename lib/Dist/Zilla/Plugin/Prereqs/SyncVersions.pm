@@ -201,6 +201,17 @@ which infer the dependency, matching the largest one found, so the above becomes
     runtime.requires : Foo >= 6.0
     test.requires    : Foo >= 6.0
 
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::Plugin::Prereqs::SyncVersions",
+    "interface":"class",
+    "does":"Dist::Zilla::Role::PrereqSource"
+}
+
+
+=end MetaPOD::JSON
+
 =head1 AUTHOR
 
 Kent Fredric <kentfredric@gmail.com>
