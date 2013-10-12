@@ -17,6 +17,7 @@ with 'Dist::Zilla::Role::PrereqSource';
 
 
 
+
 has applyto_phase => (
   is => ro =>,
   isa => ArrayRef [Str] =>,
@@ -24,11 +25,13 @@ has applyto_phase => (
   default => sub { [qw(build test runtime configure)] },
 );
 
+
 has applyto_relation => (
   is => ro => isa => ArrayRef [Str],
   lazy    => 1,
   default => sub { [qw(requires)] },
 );
+
 
 has applyto => (
   is => ro =>,
@@ -102,9 +105,8 @@ sub _build__applyto_list {
   return \@out;
 }
 
-sub mvp_multivalue_args { return qw( applyto applyto_relation applyto_phase ) }
 
-sub mvp_aliases { return { 'module' => 'modules' } }
+sub mvp_multivalue_args { return qw( applyto applyto_relation applyto_phase ) }
 
 around dump_config => sub {
   my ( $orig, $self ) = @_;
@@ -118,7 +120,7 @@ around dump_config => sub {
   return $config;
 };
 
-sub foreach_phase_rel {
+sub _foreach_phase_rel {
   my ( $self, $prereqs, $callback ) = @_;
   for my $applyto ( @{ $self->_applyto_list } ) {
     my ( $phase, $rel ) = @{$applyto};
@@ -129,13 +131,14 @@ sub foreach_phase_rel {
   return;
 }
 
+
 sub register_prereqs {
   my ($self)  = @_;
   my $zilla   = $self->zilla;
   my $prereqs = $zilla->prereqs;
   my $guts = $prereqs->cpan_meta_prereqs->{prereqs} || {};
 
-  $self->foreach_phase_rel(
+  $self->_foreach_phase_rel(
     $guts => sub {
       my ( $phase, $rel, $reqs ) = @_;
       for my $module ( keys %{$reqs} ) {
@@ -143,7 +146,7 @@ sub register_prereqs {
       }
     }
   );
-  $self->foreach_phase_rel(
+  $self->_foreach_phase_rel(
     $guts => sub {
       my ( $phase, $rel, $reqs ) = @_;
       for my $module ( keys %{$reqs} ) {
@@ -202,6 +205,69 @@ which infer the dependency, matching the largest one found, so the above becomes
 
     runtime.requires : Foo >= 6.0
     test.requires    : Foo >= 6.0
+
+=head1 METHODS
+
+=head2 C<mvp_multivalue_args>
+
+The following attributes exist, and may be specified more than once:
+
+    applyto
+    applyto_relation
+    applyto_phase
+
+=head2 C<register_prereqs>
+
+This method is called during C<Dist::Zilla> prereq generation,
+and it injects supplementary prerequisites to make things match up.
+
+=head1 ATTRIBUTES
+
+=head2 C<applyto_phase>
+
+A Multivalue attribute that specifies which phases to iterate and homogenize.
+
+By default, this is:
+
+    applyto_phase = build
+    applyto_phase = test
+    applyto_phase = runtime
+    applyto_phase = configure
+
+However, you could extend it further to include C<develop> if you wanted to.
+
+    applyto_phase = build
+    applyto_phase = test
+    applyto_phase = runtime
+    applyto_phase = configure
+    appyyto_phase = develop
+
+=head2 C<applyto_relation>
+
+A Multivalue attribute that specifies which relations to iterate and homogenize.
+
+By default, this is:
+
+    applyto_relation = requires
+
+However, you could extend it further to include C<suggests> and C<recommends> if you wanted to.
+You could even add C<conflicts> ... but you really shouldn't.
+
+    applyto_relation = requires
+    applyto_relation = suggests
+    applyto_relation = recommends
+    applyto_relation = conflicts ; Danger will robinson.
+
+=head2 C<applyto>
+
+A Multivalue attribute that by default composites the values of 
+C<applyto_relation> and C<applyto_phase>.
+
+This is if you want to be granular about how you specify phase/relations to process.
+
+    applyto = runtime.requires
+    applyto = develop.requires
+    applyto = test.suggests
 
 =begin MetaPOD::JSON v1.1.0
 
