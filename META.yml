@@ -20,7 +20,7 @@ name: Dist-Zilla-Plugin-Prereqs-SyncVersions
 provides:
   Dist::Zilla::Plugin::Prereqs::SyncVersions:
     file: lib/Dist/Zilla/Plugin/Prereqs/SyncVersions.pm
-    version: 0.001000
+    version: 0.001001
 requires:
   Dist::Zilla::Role::PrereqSource: 0
   Moose: 0
@@ -33,7 +33,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-Plugin-Prereqs-SyncVersions/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-Plugin-Prereqs-SyncVersions
   repository: https://github.com/kentfredric/Dist-Zilla-Plugin-Prereqs-SyncVersions.git
-version: 0.001000
+version: 0.001001
 x_BuiltWith:
   modules:
     Dist::Zilla::PluginBundle::Author::KENTNL: 1.9.0

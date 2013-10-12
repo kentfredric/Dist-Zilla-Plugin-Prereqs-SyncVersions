@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Prereqs::SyncVersions::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Prereqs::SyncVersions::VERSION = '0.001000';
+  $Dist::Zilla::Plugin::Prereqs::SyncVersions::VERSION = '0.001001';
 }
 
 # ABSTRACT: Homogenize prerequisites so dependency versions are consistent
@@ -175,7 +175,7 @@ Dist::Zilla::Plugin::Prereqs::SyncVersions - Homogenize prerequisites so depende
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 SYNOPSIS
 

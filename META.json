@@ -62,7 +62,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::Prereqs::SyncVersions" : {
          "file" : "lib/Dist/Zilla/Plugin/Prereqs/SyncVersions.pm",
-         "version" : "0.001000"
+         "version" : "0.001001"
       }
    },
    "release_status" : "stable",
@@ -77,7 +77,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Prereqs-SyncVersions"
       }
    },
-   "version" : "0.001000",
+   "version" : "0.001001",
    "x_BuiltWith" : {
       "modules" : {
          "Dist::Zilla::PluginBundle::Author::KENTNL" : "1.9.0",
