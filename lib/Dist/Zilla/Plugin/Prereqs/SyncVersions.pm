@@ -206,6 +206,7 @@ which infer the dependency, matching the largest one found, so the above becomes
 {
     "namespace":"Dist::Zilla::Plugin::Prereqs::SyncVersions",
     "interface":"class",
+    "inherits":"Moose::Object",
     "does":"Dist::Zilla::Role::PrereqSource"
 }
 
