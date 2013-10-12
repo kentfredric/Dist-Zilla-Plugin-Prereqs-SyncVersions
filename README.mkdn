@@ -1,6 +1,6 @@
 # NAME
 
-Dist::Zilla::Plugin::Prereqs::SyncVersions - Homogenise prerequisites so dependency versions are consistent
+Dist::Zilla::Plugin::Prereqs::SyncVersions - Homogenize prerequisites so dependency versions are consistent
 
 # VERSION
 
@@ -16,9 +16,9 @@ Note: This must come __after__ packages that add their own prerequisites in orde
 
 # DESCRIPTION
 
-This module exists to pose mostly as a workaround for potential bugs in downstream toolchains.
+This module exists to pose mostly as a workaround for potential bugs in downstream tool-chains.
 
-Namely, CPAN.pm is confused when it sees:
+Namely, `CPAN.pm` is confused when it sees:
 
     runtime.requires : Foo >= 5.0
     test.requires    : Foo >= 6.0
@@ -27,17 +27,82 @@ It doesn't know what to do.
 
 This is an easy enough problem to solve if you're using `[Prereqs]` directly,
 and `[AutoPrereqs]` already does the right thing, but it gets messier
-when you're working with [plugins that inject their own prereqs](https://github.com/dagolden/Path-Tiny/commit/c620171db96597456a182ea6088a24d8de5debf6)
+when you're working with [plugins that inject their own prerequisites>](https://github.com/dagolden/Path-Tiny/commit/c620171db96597456a182ea6088a24d8de5debf6)
 
-So this plugin will homogenise dependencies to be the same version in all phases
+So this plugin will homogenize dependencies to be the same version in all phases
 which infer the dependency, matching the largest one found, so the above becomes:
 
     runtime.requires : Foo >= 6.0
     test.requires    : Foo >= 6.0
 
+# METHODS
+
+## `mvp_multivalue_args`
+
+The following attributes exist, and may be specified more than once:
+
+    applyto
+    applyto_relation
+    applyto_phase
+
+## `register_prereqs`
+
+This method is called during `Dist::Zilla` prerequisite generation,
+and it injects supplementary prerequisites to make things match up.
+
+# ATTRIBUTES
+
+## `applyto_phase`
+
+A multi-value attribute that specifies which phases to iterate and homogenize.
+
+By default, this is:
+
+    applyto_phase = build
+    applyto_phase = test
+    applyto_phase = runtime
+    applyto_phase = configure
+
+However, you could extend it further to include `develop` if you wanted to.
+
+    applyto_phase = build
+    applyto_phase = test
+    applyto_phase = runtime
+    applyto_phase = configure
+    appyyto_phase = develop
+
+## `applyto_relation`
+
+A multi-value attribute that specifies which relations to iterate and homogenize.
+
+By default, this is:
+
+    applyto_relation = requires
+
+However, you could extend it further to include `suggests` and `recommends` if you wanted to.
+You could even add `conflicts` ... but you really shouldn't.
+
+    applyto_relation = requires
+    applyto_relation = suggests
+    applyto_relation = recommends
+    applyto_relation = conflicts ; Danger will robinson.
+
+## `applyto`
+
+A multi-value attribute that by default composites the values of
+
+`applyto_relation` and `applyto_phase`.
+
+This is if you want to be granular about how you specify phase/relations to process.
+
+    applyto = runtime.requires
+    applyto = develop.requires
+    applyto = test.suggests
+
 {
     "namespace":"Dist::Zilla::Plugin::Prereqs::SyncVersions",
     "interface":"class",
+    "inherits":"Moose::Object",
     "does":"Dist::Zilla::Role::PrereqSource"
 }
 
