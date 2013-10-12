@@ -75,7 +75,7 @@ x_Dist_Zilla:
         Dist::Zilla::Role::Bootstrap:
           distname: Dist-Zilla-Plugin-Prereqs-SyncVersions
           fallback: 1
-          try_built: ~
+          try_built: 1
           try_built_method: mtime
       name: Bootstrap::lib
       version: 0.04000001
@@ -364,7 +364,7 @@ x_Dist_Zilla:
             - recommends
             - suggests
       name: Prereqs::SyncVersions
-      version: ~
+      version: 0.1.0
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'

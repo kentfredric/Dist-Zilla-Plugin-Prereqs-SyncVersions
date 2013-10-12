@@ -118,7 +118,7 @@
                "Dist::Zilla::Role::Bootstrap" : {
                   "distname" : "Dist-Zilla-Plugin-Prereqs-SyncVersions",
                   "fallback" : "1",
-                  "try_built" : null,
+                  "try_built" : "1",
                   "try_built_method" : "mtime"
                }
             },
@@ -486,7 +486,7 @@
                }
             },
             "name" : "Prereqs::SyncVersions",
-            "version" : null
+            "version" : "0.1.0"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
