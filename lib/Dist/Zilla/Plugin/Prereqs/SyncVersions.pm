@@ -68,6 +68,7 @@ sub _set_module_version {
     my $comparator = $self->_versionify( $version );
     my $current    = $self->_max_versions->{ $module };
     if ( $current < $comparator ) {
+        $self->log("Version upgrade on : " . $module );
         $self->_max_version->{$module} = $comparator;
     }
 }
