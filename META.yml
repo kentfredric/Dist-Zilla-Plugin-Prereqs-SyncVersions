@@ -36,7 +36,7 @@ resources:
 version: 0.001001
 x_BuiltWith:
   modules:
-    Dist::Zilla::PluginBundle::Author::KENTNL: 1.9.0
+    Dist::Zilla::PluginBundle::Author::KENTNL: 2.000000
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 1.7.2
     Dist::Zilla::Role::PrereqSource: 4.300039
     File::Spec: 3.44
@@ -235,7 +235,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
       name: '@Author::KENTNL/Author::KENTNL::MinimumPerl'
-      version: 1.9.0
+      version: 2.000000
     -
       class: Dist::Zilla::Plugin::Authority
       name: '@Author::KENTNL/Authority'

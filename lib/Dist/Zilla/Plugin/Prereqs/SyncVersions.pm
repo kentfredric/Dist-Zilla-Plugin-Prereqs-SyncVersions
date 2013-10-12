@@ -198,7 +198,7 @@ It doesn't know what to do.
 
 This is an easy enough problem to solve if you're using C<[Prereqs]> directly,
 and C<[AutoPrereqs]> already does the right thing, but it gets messier
-when you're working with L<< plugins that inject their own prerequisites>|https://github.com/dagolden/Path-Tiny/commit/c620171db96597456a182ea6088a24d8de5debf6 >>
+when you're working with L<< plugins that inject their own prerequisites|https://github.com/dagolden/Path-Tiny/commit/c620171db96597456a182ea6088a24d8de5debf6 >>
 
 So this plugin will homogenize dependencies to be the same version in all phases
 which infer the dependency, matching the largest one found, so the above becomes:
