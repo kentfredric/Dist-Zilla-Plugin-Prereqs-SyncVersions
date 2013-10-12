@@ -1,12 +1,20 @@
 # NAME
 
-Dist::Zilla::Plugin::Prereqs::SyncVersions - Homogenise prerequisites so dependent versions are consistent
+Dist::Zilla::Plugin::Prereqs::SyncVersions - Homogenise prerequisites so dependency versions are consistent
 
 # VERSION
 
 version 0.001000
 
 # SYNOPSIS
+
+    ; <bunch of metaprereq providing modules>
+
+    [Prereqs::SyncVersions]
+
+Note: This must come __after__ packages that add their own prerequisites in order to work as intended.
+
+# DESCRIPTION
 
 This module exists to pose mostly as a workaround for potential bugs in downstream toolchains.
 
@@ -26,6 +34,14 @@ which infer the dependency, matching the largest one found, so the above becomes
 
     runtime.requires : Foo >= 6.0
     test.requires    : Foo >= 6.0
+
+{
+    "namespace":"Dist::Zilla::Plugin::Prereqs::SyncVersions",
+    "interface":"class",
+    "does":"Dist::Zilla::Role::PrereqSource"
+}
+
+
 
 # AUTHOR
 

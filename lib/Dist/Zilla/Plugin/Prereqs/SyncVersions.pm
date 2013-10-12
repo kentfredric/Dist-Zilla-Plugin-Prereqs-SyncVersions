@@ -3,13 +3,34 @@ use warnings;
 
 package Dist::Zilla::Plugin::Prereqs::SyncVersions;
 
-# ABSTRACT: Homogenise prerequisites so dependent versions are consistent
+# ABSTRACT: Homogenise prerequisites so dependency versions are consistent
 
 use Moose;
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
 with 'Dist::Zilla::Role::PrereqSource';
 
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::Plugin::Prereqs::SyncVersions",
+    "interface":"class",
+    "inherits":"Moose::Object",
+    "does":"Dist::Zilla::Role::PrereqSource"
+}
+
+=end MetaPOD::JSON
+
+=cut
+
 =head1 SYNOPSIS
+
+    ; <bunch of metaprereq providing modules>
+
+    [Prereqs::SyncVersions]
+
+Note: This must come B<after> packages that add their own prerequisites in order to work as intended.
+
+=head1 DESCRIPTION
 
 This module exists to pose mostly as a workaround for potential bugs in downstream toolchains.
 
