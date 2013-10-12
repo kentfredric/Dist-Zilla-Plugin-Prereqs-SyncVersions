@@ -1,6 +1,6 @@
 NAME
     Dist::Zilla::Plugin::Prereqs::SyncVersions - Homogenise prerequisites so
-    dependent versions are consistent
+    dependency versions are consistent
 
 VERSION
     version 0.001000

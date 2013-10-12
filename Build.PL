@@ -12,7 +12,7 @@ my %module_build_args = (
   "configure_requires" => {
     "Module::Build" => "0.4007"
   },
-  "dist_abstract" => "Homogenise prerequisites so dependent versions are consistent",
+  "dist_abstract" => "Homogenise prerequisites so dependency versions are consistent",
   "dist_author" => [
     "Kent Fredric <kentfredric\@gmail.com>"
   ],

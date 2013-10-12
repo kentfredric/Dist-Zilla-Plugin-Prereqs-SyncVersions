@@ -9,7 +9,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Prereqs::SyncVersions::VERSION = '0.001000';
 }
 
-# ABSTRACT: Homogenise prerequisites so dependent versions are consistent
+# ABSTRACT: Homogenise prerequisites so dependency versions are consistent
 
 use Moose;
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
@@ -165,7 +165,7 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Prereqs::SyncVersions - Homogenise prerequisites so dependent versions are consistent
+Dist::Zilla::Plugin::Prereqs::SyncVersions - Homogenise prerequisites so dependency versions are consistent
 
 =head1 VERSION
 
