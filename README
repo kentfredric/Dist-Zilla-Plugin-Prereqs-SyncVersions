@@ -26,7 +26,8 @@ DESCRIPTION
 
     This is an easy enough problem to solve if you're using "[Prereqs]"
     directly, and "[AutoPrereqs]" already does the right thing, but it gets
-    messier when you're working with plugins that inject their own "prereqs"
+    messier when you're working with plugins that inject their own
+    prerequisites>
     <https://github.com/dagolden/Path-Tiny/commit/c620171db96597456a182ea608
     8a24d8de5debf6>
 
@@ -46,12 +47,12 @@ METHODS
         applyto_phase
 
   "register_prereqs"
-    This method is called during "Dist::Zilla" prereq generation, and it
-    injects supplementary prerequisites to make things match up.
+    This method is called during "Dist::Zilla" prerequisite generation, and
+    it injects supplementary prerequisites to make things match up.
 
 ATTRIBUTES
   "applyto_phase"
-    A Multivalue attribute that specifies which phases to iterate and
+    A multi-value attribute that specifies which phases to iterate and
     homogenize.
 
     By default, this is:
@@ -71,7 +72,7 @@ ATTRIBUTES
         appyyto_phase = develop
 
   "applyto_relation"
-    A Multivalue attribute that specifies which relations to iterate and
+    A multi-value attribute that specifies which relations to iterate and
     homogenize.
 
     By default, this is:
@@ -88,7 +89,8 @@ ATTRIBUTES
         applyto_relation = conflicts ; Danger will robinson.
 
   "applyto"
-    A Multivalue attribute that by default composites the values of
+    A multi-value attribute that by default composites the values of
+
     "applyto_relation" and "applyto_phase".
 
     This is if you want to be granular about how you specify phase/relations

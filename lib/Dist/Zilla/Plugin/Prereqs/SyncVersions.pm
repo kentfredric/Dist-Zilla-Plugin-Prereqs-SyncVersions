@@ -198,7 +198,7 @@ It doesn't know what to do.
 
 This is an easy enough problem to solve if you're using C<[Prereqs]> directly,
 and C<[AutoPrereqs]> already does the right thing, but it gets messier
-when you're working with L<< plugins that inject their own C<prereqs>|https://github.com/dagolden/Path-Tiny/commit/c620171db96597456a182ea6088a24d8de5debf6 >>
+when you're working with L<< plugins that inject their own prerequisites>|https://github.com/dagolden/Path-Tiny/commit/c620171db96597456a182ea6088a24d8de5debf6 >>
 
 So this plugin will homogenize dependencies to be the same version in all phases
 which infer the dependency, matching the largest one found, so the above becomes:
@@ -218,14 +218,14 @@ The following attributes exist, and may be specified more than once:
 
 =head2 C<register_prereqs>
 
-This method is called during C<Dist::Zilla> prereq generation,
+This method is called during C<Dist::Zilla> prerequisite generation,
 and it injects supplementary prerequisites to make things match up.
 
 =head1 ATTRIBUTES
 
 =head2 C<applyto_phase>
 
-A Multivalue attribute that specifies which phases to iterate and homogenize.
+A multi-value attribute that specifies which phases to iterate and homogenize.
 
 By default, this is:
 
@@ -244,7 +244,7 @@ However, you could extend it further to include C<develop> if you wanted to.
 
 =head2 C<applyto_relation>
 
-A Multivalue attribute that specifies which relations to iterate and homogenize.
+A multi-value attribute that specifies which relations to iterate and homogenize.
 
 By default, this is:
 
@@ -260,7 +260,8 @@ You could even add C<conflicts> ... but you really shouldn't.
 
 =head2 C<applyto>
 
-A Multivalue attribute that by default composites the values of
+A multi-value attribute that by default composites the values of
+
 C<applyto_relation> and C<applyto_phase>.
 
 This is if you want to be granular about how you specify phase/relations to process.
