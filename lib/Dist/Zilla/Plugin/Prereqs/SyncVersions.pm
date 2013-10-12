@@ -138,7 +138,7 @@ sub register_prereqs {
     my $reqs = $guts->{$phase}->{$rel}->as_string_hash;
     for my $module ( keys %{$reqs} ) {
       my $v = $self->_get_module_version( $module, $reqs->{$module} );
-      $zilla->register_prereqs( { phase => $phase, type => $rel } );
+      $zilla->register_prereqs( { phase => $phase, type => $rel }, $module, $v  );
     }
   }
   return $prereqs;
