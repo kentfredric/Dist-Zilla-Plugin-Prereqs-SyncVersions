@@ -8,6 +8,7 @@ build_requires:
   IPC::Open3: 0
   Module::Build: 0.4007
   Test::More: 0.98
+  version: 0
 configure_requires:
   Module::Build: 0.4007
 dynamic_config: 0
@@ -336,6 +337,34 @@ x_Dist_Zilla:
           type: requires
       name: TestRequires
       version: 4.300039
+    -
+      class: Dist::Zilla::Plugin::Prereqs::SyncVersions
+      config:
+        Dist::Zilla::Plugin::Prereqs::SyncVersions:
+          applyto:
+            - build.requires
+            - build.recommends
+            - build.suggests
+            - test.requires
+            - test.recommends
+            - test.suggests
+            - runtime.requires
+            - runtime.recommends
+            - runtime.suggests
+            - configure.requires
+            - configure.recommends
+            - configure.suggests
+          applyto_phase:
+            - build
+            - test
+            - runtime
+            - configure
+          applyto_relation:
+            - requires
+            - recommends
+            - suggests
+      name: Prereqs::SyncVersions
+      version: ~
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'

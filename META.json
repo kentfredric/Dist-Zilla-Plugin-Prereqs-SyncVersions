@@ -55,7 +55,8 @@
             "File::Spec" : "0",
             "IO::Handle" : "0",
             "IPC::Open3" : "0",
-            "Test::More" : "0.98"
+            "Test::More" : "0.98",
+            "version" : "0"
          }
       }
    },
@@ -452,6 +453,40 @@
             },
             "name" : "TestRequires",
             "version" : "4.300039"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs::SyncVersions",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs::SyncVersions" : {
+                  "applyto" : [
+                     "build.requires",
+                     "build.recommends",
+                     "build.suggests",
+                     "test.requires",
+                     "test.recommends",
+                     "test.suggests",
+                     "runtime.requires",
+                     "runtime.recommends",
+                     "runtime.suggests",
+                     "configure.requires",
+                     "configure.recommends",
+                     "configure.suggests"
+                  ],
+                  "applyto_phase" : [
+                     "build",
+                     "test",
+                     "runtime",
+                     "configure"
+                  ],
+                  "applyto_relation" : [
+                     "requires",
+                     "recommends",
+                     "suggests"
+                  ]
+               }
+            },
+            "name" : "Prereqs::SyncVersions",
+            "version" : null
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",

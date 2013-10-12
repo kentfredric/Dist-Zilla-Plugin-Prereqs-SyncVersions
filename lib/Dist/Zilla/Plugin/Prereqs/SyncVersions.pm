@@ -73,7 +73,7 @@ sub _set_module_version {
 }
 sub _get_module_version {
     my ( $self, $module ) = @_;
-    return $self->_max_version->{$module};
+    return $self->_max_versions->{$module};
 }
 
 sub _build_applyto {
