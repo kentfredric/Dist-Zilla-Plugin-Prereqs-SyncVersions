@@ -17,7 +17,7 @@ my %module_build_args = (
     "Kent Fredric <kentfredric\@gmail.com>"
   ],
   "dist_name" => "Dist-Zilla-Plugin-Prereqs-SyncVersions",
-  "dist_version" => "0.1.0",
+  "dist_version" => "0.001000",
   "license" => "perl",
   "module_name" => "Dist::Zilla::Plugin::Prereqs::SyncVersions",
   "recommends" => {},
@@ -26,9 +26,9 @@ my %module_build_args = (
     "Dist::Zilla::Role::PrereqSource" => 0,
     "Moose" => 0,
     "MooseX::Types::Moose" => 0,
-    "perl" => "v5.10.0",
+    "perl" => "5.006",
     "strict" => 0,
-    "version" => "0.9901",
+    "version" => 0,
     "warnings" => 0
   },
   "script_files" => [],
@@ -36,8 +36,7 @@ my %module_build_args = (
     "File::Spec" => 0,
     "IO::Handle" => 0,
     "IPC::Open3" => 0,
-    "Test::More" => "0.98",
-    "version" => "0.9901"
+    "Test::More" => "0.98"
   }
 );
 

@@ -44,9 +44,9 @@
             "Dist::Zilla::Role::PrereqSource" : "0",
             "Moose" : "0",
             "MooseX::Types::Moose" : "0",
-            "perl" : "v5.10.0",
+            "perl" : "5.006",
             "strict" : "0",
-            "version" : "0.9901",
+            "version" : "0",
             "warnings" : "0"
          }
       },
@@ -55,19 +55,18 @@
             "File::Spec" : "0",
             "IO::Handle" : "0",
             "IPC::Open3" : "0",
-            "Test::More" : "0.98",
-            "version" : "0.9901"
+            "Test::More" : "0.98"
          }
       }
    },
    "provides" : {
       "Dist::Zilla::Plugin::Prereqs::SyncVersions" : {
          "file" : "lib/Dist/Zilla/Plugin/Prereqs/SyncVersions.pm",
-         "version" : "v0.1.0"
+         "version" : "0.001000"
       }
    },
    "release_status" : "stable",
-   "version" : "0.1.0",
+   "version" : "0.001000",
    "x_BuiltWith" : {
       "modules" : {
          "Dist::Zilla::PluginBundle::Author::KENTNL" : "1.9.0",
@@ -442,43 +441,6 @@
             },
             "name" : "@Author::KENTNL/Prereqs::MatchInstalled",
             "version" : "0.1.4"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Prereqs",
-            "config" : {
-               "Dist::Zilla::Plugin::Prereqs" : {
-                  "phase" : "test",
-                  "type" : "requires"
-               }
-            },
-            "name" : "TestRequires",
-            "version" : "4.300039"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Prereqs::SyncVersions",
-            "config" : {
-               "Dist::Zilla::Plugin::Prereqs::SyncVersions" : {
-                  "applyto" : [
-                     "build.requires",
-                     "runtime.requires",
-                     "configure.requires",
-                     "test.requires",
-                     "develop.requires"
-                  ],
-                  "applyto_phase" : [
-                     "build",
-                     "runtime",
-                     "configure",
-                     "test",
-                     "develop"
-                  ],
-                  "applyto_relation" : [
-                     "requires"
-                  ]
-               }
-            },
-            "name" : "Prereqs::SyncVersions",
-            "version" : "0.1.0"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",

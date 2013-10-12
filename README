@@ -3,7 +3,7 @@ NAME
     dependent versions are consistent
 
 VERSION
-    version 0.1.0
+    version 0.001000
 
 SYNOPSIS
     This module exists to pose mostly as a workaround for potential bugs in
