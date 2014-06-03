@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Plugin-Prereqs-SyncVersions
 
 {{$NEXT}}
+
+0.002000 2014-06-03T06:53:36Z
  [00 Major]
  - Toolkit moved to EUMM and using Soft dependencies
  - dist.ini now baked.
