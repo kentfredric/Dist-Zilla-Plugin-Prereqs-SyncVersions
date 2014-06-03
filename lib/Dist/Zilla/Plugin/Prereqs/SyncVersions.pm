@@ -7,6 +7,8 @@ package Dist::Zilla::Plugin::Prereqs::SyncVersions;
 
 our $VERSION = '0.001002';
 
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 use Moose;
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
 with 'Dist::Zilla::Role::PrereqSource';
