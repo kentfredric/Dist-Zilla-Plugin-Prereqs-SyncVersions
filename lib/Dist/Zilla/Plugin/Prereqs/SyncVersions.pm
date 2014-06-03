@@ -7,7 +7,7 @@ package Dist::Zilla::Plugin::Prereqs::SyncVersions;
 
 # ABSTRACT: Homogenize prerequisites so dependency versions are consistent
 
-our $VERSION = '0.001002';
+our $VERSION = '0.002000';
 
 # AUTHORITY
 
