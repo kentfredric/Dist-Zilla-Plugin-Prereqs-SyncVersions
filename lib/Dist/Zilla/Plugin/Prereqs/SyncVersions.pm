@@ -5,6 +5,8 @@ package Dist::Zilla::Plugin::Prereqs::SyncVersions;
 
 # ABSTRACT: Homogenize prerequisites so dependency versions are consistent
 
+our $VERSION = '0.001002';
+
 use Moose;
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
 with 'Dist::Zilla::Role::PrereqSource';
