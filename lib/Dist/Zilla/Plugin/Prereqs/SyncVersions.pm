@@ -1,3 +1,4 @@
+use 5.008;    # pragma utf8
 use strict;
 use warnings;
 use utf8;
