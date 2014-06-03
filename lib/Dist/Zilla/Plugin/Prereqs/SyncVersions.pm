@@ -104,7 +104,8 @@ has applyto_phase => (
 
 
 has applyto_relation => (
-  is => ro => isa => ArrayRef [Str],
+  is => ro =>,
+  isa => ArrayRef [Str],
   lazy    => 1,
   default => sub { [qw(requires)] },
 );
