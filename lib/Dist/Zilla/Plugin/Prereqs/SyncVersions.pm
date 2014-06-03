@@ -1,19 +1,85 @@
+use 5.008;    # pragma utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::Plugin::Prereqs::SyncVersions;
-BEGIN {
-  $Dist::Zilla::Plugin::Prereqs::SyncVersions::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::Plugin::Prereqs::SyncVersions::VERSION = '0.001001';
-}
 
-# ABSTRACT: Homogenize prerequisites so dependency versions are consistent
+# ABSTRACT: DEPRECATED Homogenize prerequisites so dependency versions are consistent
 
-use Moose;
+our $VERSION = '0.002000';
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
+use Moose qw( has with around );
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
 with 'Dist::Zilla::Role::PrereqSource';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -26,11 +92,42 @@ has applyto_phase => (
 );
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 has applyto_relation => (
-  is => ro => isa => ArrayRef [Str],
+  is => ro =>,
+  isa => ArrayRef [Str],
   lazy    => 1,
   default => sub { [qw(requires)] },
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 has applyto => (
@@ -55,7 +152,7 @@ has _max_versions => (
 );
 
 sub _versionify {
-  my ( $self, $version ) = @_;
+  my ( undef, $version ) = @_;
   return $version if ref $version;
   require version;
   return version->parse($version);
@@ -106,6 +203,15 @@ sub _build__applyto_list {
 }
 
 
+
+
+
+
+
+
+
+
+
 sub mvp_multivalue_args { return qw( applyto applyto_relation applyto_phase ) }
 
 around dump_config => sub {
@@ -132,6 +238,12 @@ sub _foreach_phase_rel {
 }
 
 
+
+
+
+
+
+
 sub register_prereqs {
   my ($self)  = @_;
   my $zilla   = $self->zilla;
@@ -140,11 +252,11 @@ sub register_prereqs {
 
   $self->_foreach_phase_rel(
     $guts => sub {
-      my ( $phase, $rel, $reqs ) = @_;
+      my ( undef, undef, $reqs ) = @_;
       for my $module ( keys %{$reqs} ) {
         $self->_set_module_version( $module, $reqs->{$module} );
       }
-    }
+    },
   );
   $self->_foreach_phase_rel(
     $guts => sub {
@@ -153,7 +265,7 @@ sub register_prereqs {
         my $v = $self->_get_module_version( $module, $reqs->{$module} );
         $zilla->register_prereqs( { phase => $phase, type => $rel }, $module, $v );
       }
-    }
+    },
   );
   return $prereqs;
 }
@@ -167,15 +279,19 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Prereqs::SyncVersions - Homogenize prerequisites so dependency versions are consistent
+Dist::Zilla::Plugin::Prereqs::SyncVersions - DEPRECATED Homogenize prerequisites so dependency versions are consistent
 
 =head1 VERSION
 
-version 0.001001
+version 0.002000
+
+=head1 DEPRECATED
+
+This module is deprecated as equivalent behavior is now part of C<Dist::Zilla>
 
 =head1 SYNOPSIS
 
@@ -288,7 +404,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
