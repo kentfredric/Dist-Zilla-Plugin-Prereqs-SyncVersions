@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::Prereqs::SyncVersions;
 
-# ABSTRACT: Homogenize prerequisites so dependency versions are consistent
+# ABSTRACT: DEPRECATED Homogenize prerequisites so dependency versions are consistent
 
 our $VERSION = '0.002000';
 
@@ -27,6 +27,10 @@ with 'Dist::Zilla::Role::PrereqSource';
 =end MetaPOD::JSON
 
 =cut
+
+=head1 DEPRECATED
+
+This module is deprecated as equivalent behavior is now part of C<Dist::Zilla>
 
 =head1 SYNOPSIS
 
