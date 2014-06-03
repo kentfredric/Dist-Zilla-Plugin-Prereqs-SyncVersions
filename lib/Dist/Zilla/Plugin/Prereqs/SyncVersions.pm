@@ -251,7 +251,7 @@ sub register_prereqs {
       for my $module ( keys %{$reqs} ) {
         $self->_set_module_version( $module, $reqs->{$module} );
       }
-    }
+    },
   );
   $self->_foreach_phase_rel(
     $guts => sub {
@@ -260,7 +260,7 @@ sub register_prereqs {
         my $v = $self->_get_module_version( $module, $reqs->{$module} );
         $zilla->register_prereqs( { phase => $phase, type => $rel }, $module, $v );
       }
-    }
+    },
   );
   return $prereqs;
 }
