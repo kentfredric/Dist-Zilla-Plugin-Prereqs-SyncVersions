@@ -1,11 +1,17 @@
 Release history for Dist-Zilla-Plugin-Prereqs-SyncVersions
 
 {{$NEXT}}
+ [00 Major]
+ - Toolkit moved to EUMM and using Soft dependencies
+ - dist.ini now baked.
+ - Distribution now deprecated.
+
  [Dependencies::Stats]
  - Dependencies changed since 0.001001, see Changes.deps* for details
  - build: -1
  - configure: +1 -1 (recommends: +1)
  - develop: +41 ↑1 -2 (suggests: +2 -1)
+ - runtime: +1 ↑1
  - test: +3 ↓1 -3 (recommends: +4)
 
 0.001001 2013-10-12T07:07:17Z
