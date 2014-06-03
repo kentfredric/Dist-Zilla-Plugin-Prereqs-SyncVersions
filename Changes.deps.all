@@ -52,6 +52,9 @@
  - Dist::Zilla::App::Command::bakeini 0.001000
  - Dist::Zilla::PluginBundle::Author::KENTNL 2.015000
 
+ [Added / runtime requires]
+ - utf8
+
  [Added / test recommends]
  - CPAN::Meta
  - CPAN::Meta::Requirements 2.120900
@@ -65,6 +68,9 @@
 
  [Changed / develop requires]
  - Test::Kwalitee 1.08 → 1.12
+
+ [Changed / runtime requires]
+ - perl 5.006 → 5.008
 
  [Changed / test requires]
  - Test::More 0.98 → 0.89
