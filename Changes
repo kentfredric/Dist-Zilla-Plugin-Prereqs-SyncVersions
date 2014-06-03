@@ -1,5 +1,7 @@
 Release history for Dist-Zilla-Plugin-Prereqs-SyncVersions
 
+0.001002 2014-06-03T06:32:33Z
+
 0.001001 2013-10-12T07:07:17Z
  [00 Minor]
  - Typo in documentation ( thanks haarg ).

@@ -2,18 +2,76 @@ use strict;
 use warnings;
 
 package Dist::Zilla::Plugin::Prereqs::SyncVersions;
-BEGIN {
-  $Dist::Zilla::Plugin::Prereqs::SyncVersions::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::Plugin::Prereqs::SyncVersions::VERSION = '0.001001';
-}
 
 # ABSTRACT: Homogenize prerequisites so dependency versions are consistent
+
+our $VERSION = '0.001002';
 
 use Moose;
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
 with 'Dist::Zilla::Role::PrereqSource';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -26,11 +84,41 @@ has applyto_phase => (
 );
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 has applyto_relation => (
   is => ro => isa => ArrayRef [Str],
   lazy    => 1,
   default => sub { [qw(requires)] },
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 has applyto => (
@@ -106,6 +194,15 @@ sub _build__applyto_list {
 }
 
 
+
+
+
+
+
+
+
+
+
 sub mvp_multivalue_args { return qw( applyto applyto_relation applyto_phase ) }
 
 around dump_config => sub {
@@ -130,6 +227,12 @@ sub _foreach_phase_rel {
   }
   return;
 }
+
+
+
+
+
+
 
 
 sub register_prereqs {
@@ -167,7 +270,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -175,7 +278,7 @@ Dist::Zilla::Plugin::Prereqs::SyncVersions - Homogenize prerequisites so depende
 
 =head1 VERSION
 
-version 0.001001
+version 0.001002
 
 =head1 SYNOPSIS
 
@@ -288,7 +391,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

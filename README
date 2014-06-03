@@ -3,7 +3,7 @@ NAME
     dependency versions are consistent
 
 VERSION
-    version 0.001001
+    version 0.001002
 
 SYNOPSIS
         ; <bunch of metaprereq providing modules>
@@ -104,7 +104,7 @@ AUTHOR
     Kent Fredric <kentfredric@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2013 by Kent Fredric
+    This software is copyright (c) 2014 by Kent Fredric
     <kentfredric@gmail.com>.
 
     This is free software; you can redistribute it and/or modify it under
