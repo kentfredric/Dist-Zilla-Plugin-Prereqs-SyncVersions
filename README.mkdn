@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::Prereqs::SyncVersions - Homogenize prerequisites so depende
 
 # VERSION
 
-version 0.001001
+version 0.001002
 
 # SYNOPSIS
 
@@ -12,7 +12,7 @@ version 0.001001
 
     [Prereqs::SyncVersions]
 
-Note: This must come __after__ packages that add their own prerequisites in order to work as intended.
+Note: This must come **after** packages that add their own prerequisites in order to work as intended.
 
 # DESCRIPTION
 
@@ -99,22 +99,13 @@ This is if you want to be granular about how you specify phase/relations to proc
     applyto = develop.requires
     applyto = test.suggests
 
-{
-    "namespace":"Dist::Zilla::Plugin::Prereqs::SyncVersions",
-    "interface":"class",
-    "inherits":"Moose::Object",
-    "does":"Dist::Zilla::Role::PrereqSource"
-}
-
-
-
 # AUTHOR
 
 Kent Fredric <kentfredric@gmail.com>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

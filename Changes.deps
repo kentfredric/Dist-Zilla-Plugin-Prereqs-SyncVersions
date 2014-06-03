@@ -1,0 +1,25 @@
+0.001002
+ [Added / configure requires]
+ - ExtUtils::MakeMaker 6.30
+
+ [Added / test requires]
+ - ExtUtils::MakeMaker
+ - File::Spec::Functions
+ - List::Util
+
+ [Changed / test requires]
+ - Test::More 0.98 → 0.89
+
+ [Removed / build requires]
+ - Module::Build 0.4007
+
+ [Removed / configure requires]
+ - Module::Build 0.4007
+
+ [Removed / test requires]
+ - File::Spec
+ - IO::Handle
+ - IPC::Open3
+
+0.001001 2013-10-12T07:07:17Z
+
