@@ -10,7 +10,7 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Homogenize prerequisites so dependency versions are consistent",
+  "ABSTRACT" => "DEPRECATED Homogenize prerequisites so dependency versions are consistent",
   "AUTHOR" => "Kent Fredric <kentfredric\@gmail.com>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
@@ -34,7 +34,7 @@ my %WriteMakefileArgs = (
     "List::Util" => 0,
     "Test::More" => "0.89"
   },
-  "VERSION" => "0.001002",
+  "VERSION" => "0.002000",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }

@@ -5,15 +5,19 @@ use utf8;
 
 package Dist::Zilla::Plugin::Prereqs::SyncVersions;
 
-# ABSTRACT: Homogenize prerequisites so dependency versions are consistent
+# ABSTRACT: DEPRECATED Homogenize prerequisites so dependency versions are consistent
 
-our $VERSION = '0.001002';
+our $VERSION = '0.002000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( has with around );
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
 with 'Dist::Zilla::Role::PrereqSource';
+
+
+
+
 
 
 
@@ -279,11 +283,15 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Prereqs::SyncVersions - Homogenize prerequisites so dependency versions are consistent
+Dist::Zilla::Plugin::Prereqs::SyncVersions - DEPRECATED Homogenize prerequisites so dependency versions are consistent
 
 =head1 VERSION
 
-version 0.001002
+version 0.002000
+
+=head1 DEPRECATED
+
+This module is deprecated as equivalent behaviour is now part of C<Dist::Zilla>
 
 =head1 SYNOPSIS
 
