@@ -145,7 +145,7 @@ has _max_versions => (
 );
 
 sub _versionify {
-  my ( $self, $version ) = @_;
+  my ( undef, $version ) = @_;
   return $version if ref $version;
   require version;
   return version->parse($version);
@@ -245,7 +245,7 @@ sub register_prereqs {
 
   $self->_foreach_phase_rel(
     $guts => sub {
-      my ( $phase, $rel, $reqs ) = @_;
+      my ( undef, undef, $reqs ) = @_;
       for my $module ( keys %{$reqs} ) {
         $self->_set_module_version( $module, $reqs->{$module} );
       }
