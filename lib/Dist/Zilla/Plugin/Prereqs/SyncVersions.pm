@@ -104,7 +104,8 @@ You could even add C<conflicts> ... but you really shouldn't.
 =cut
 
 has applyto_relation => (
-  is => ro => isa => ArrayRef [Str],
+  is => ro =>,
+  isa => ArrayRef [Str],
   lazy    => 1,
   default => sub { [qw(requires)] },
 );
