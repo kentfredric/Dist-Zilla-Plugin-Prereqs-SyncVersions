@@ -291,7 +291,7 @@ version 0.002000
 
 =head1 DEPRECATED
 
-This module is deprecated as equivalent behaviour is now part of C<Dist::Zilla>
+This module is deprecated as equivalent behavior is now part of C<Dist::Zilla>
 
 =head1 SYNOPSIS
 

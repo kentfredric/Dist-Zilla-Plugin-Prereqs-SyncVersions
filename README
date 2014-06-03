@@ -6,7 +6,7 @@ VERSION
     version 0.002000
 
 DEPRECATED
-    This module is deprecated as equivalent behaviour is now part of
+    This module is deprecated as equivalent behavior is now part of
     "Dist::Zilla"
 
 SYNOPSIS
