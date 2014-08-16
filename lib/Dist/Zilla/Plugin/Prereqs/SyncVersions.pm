@@ -28,41 +28,6 @@ with 'Dist::Zilla::Role::PrereqSource';
 
 =cut
 
-=head1 DEPRECATED
-
-This module is deprecated as equivalent behavior is now part of C<Dist::Zilla>
-
-=head1 SYNOPSIS
-
-    ; <bunch of metaprereq providing modules>
-
-    [Prereqs::SyncVersions]
-
-Note: This must come B<after> packages that add their own prerequisites in order to work as intended.
-
-=head1 DESCRIPTION
-
-This module exists to pose mostly as a workaround for potential bugs in downstream tool-chains.
-
-Namely, C<CPAN.pm> is confused when it sees:
-
-    runtime.requires : Foo >= 5.0
-    test.requires    : Foo >= 6.0
-
-It doesn't know what to do.
-
-This is an easy enough problem to solve if you're using C<[Prereqs]> directly,
-and C<[AutoPrereqs]> already does the right thing, but it gets messier
-when you're working with L<< plugins that inject their own prerequisites|https://github.com/dagolden/Path-Tiny/commit/c620171db96597456a182ea6088a24d8de5debf6 >>
-
-So this plugin will homogenize dependencies to be the same version in all phases
-which infer the dependency, matching the largest one found, so the above becomes:
-
-    runtime.requires : Foo >= 6.0
-    test.requires    : Foo >= 6.0
-
-=cut
-
 =attr C<applyto_phase>
 
 A multi-value attribute that specifies which phases to iterate and homogenize.
@@ -274,3 +239,38 @@ __PACKAGE__->meta->make_immutable;
 no Moose;
 
 1;
+
+=head1 DEPRECATED
+
+This module is deprecated as equivalent behavior is now part of C<Dist::Zilla>
+
+=head1 SYNOPSIS
+
+    ; <bunch of metaprereq providing modules>
+
+    [Prereqs::SyncVersions]
+
+Note: This must come B<after> packages that add their own prerequisites in order to work as intended.
+
+=head1 DESCRIPTION
+
+This module exists to pose mostly as a workaround for potential bugs in downstream tool-chains.
+
+Namely, C<CPAN.pm> is confused when it sees:
+
+    runtime.requires : Foo >= 5.0
+    test.requires    : Foo >= 6.0
+
+It doesn't know what to do.
+
+This is an easy enough problem to solve if you're using C<[Prereqs]> directly,
+and C<[AutoPrereqs]> already does the right thing, but it gets messier
+when you're working with L<< plugins that inject their own prerequisites|https://github.com/dagolden/Path-Tiny/commit/c620171db96597456a182ea6088a24d8de5debf6 >>
+
+So this plugin will homogenize dependencies to be the same version in all phases
+which infer the dependency, matching the largest one found, so the above becomes:
+
+    runtime.requires : Foo >= 6.0
+    test.requires    : Foo >= 6.0
+
+=cut
