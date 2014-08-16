@@ -7,7 +7,7 @@ package Dist::Zilla::Plugin::Prereqs::SyncVersions;
 
 # ABSTRACT: DEPRECATED Homogenize prerequisites so dependency versions are consistent
 
-our $VERSION = '0.002001';
+our $VERSION = '0.002002';
 
 # AUTHORITY
 
