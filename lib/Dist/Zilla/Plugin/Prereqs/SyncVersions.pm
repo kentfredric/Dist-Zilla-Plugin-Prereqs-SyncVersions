@@ -7,7 +7,7 @@ package Dist::Zilla::Plugin::Prereqs::SyncVersions;
 
 # ABSTRACT: DEPRECATED Homogenize prerequisites so dependency versions are consistent
 
-our $VERSION = '0.002001';
+our $VERSION = '0.002002';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -252,7 +252,7 @@ Dist::Zilla::Plugin::Prereqs::SyncVersions - DEPRECATED Homogenize prerequisites
 
 =head1 VERSION
 
-version 0.002001
+version 0.002002
 
 =head1 DEPRECATED
 
