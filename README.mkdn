@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::Prereqs::SyncVersions - DEPRECATED Homogenize prerequisites
 
 # VERSION
 
-version 0.002001
+version 0.002002
 
 # DEPRECATED
 
