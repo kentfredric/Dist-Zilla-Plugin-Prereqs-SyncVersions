@@ -28,62 +28,6 @@ with 'Dist::Zilla::Role::PrereqSource';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 has applyto_phase => (
   is => ro =>,
   isa => ArrayRef [Str] =>,
@@ -339,25 +283,6 @@ and it injects supplementary prerequisites to make things match up.
 
 =head1 ATTRIBUTES
 
-=head2 C<applyto_phase>
-
-A multi-value attribute that specifies which phases to iterate and homogenize.
-
-By default, this is:
-
-    applyto_phase = build
-    applyto_phase = test
-    applyto_phase = runtime
-    applyto_phase = configure
-
-However, you could extend it further to include C<develop> if you wanted to.
-
-    applyto_phase = build
-    applyto_phase = test
-    applyto_phase = runtime
-    applyto_phase = configure
-    appyyto_phase = develop
-
 =head2 C<applyto_relation>
 
 A multi-value attribute that specifies which relations to iterate and homogenize.
@@ -385,6 +310,25 @@ This is if you want to be granular about how you specify phase/relations to proc
     applyto = runtime.requires
     applyto = develop.requires
     applyto = test.suggests
+
+=head2 C<applyto_phase>
+
+A multi-value attribute that specifies which phases to iterate and homogenize.
+
+By default, this is:
+
+    applyto_phase = build
+    applyto_phase = test
+    applyto_phase = runtime
+    applyto_phase = configure
+
+However, you could extend it further to include C<develop> if you wanted to.
+
+    applyto_phase = build
+    applyto_phase = test
+    applyto_phase = runtime
+    applyto_phase = configure
+    appyyto_phase = develop
 
 =begin MetaPOD::JSON v1.1.0
 
