@@ -1,10 +1,17 @@
-0.001002
- [Added / configure recommends]
- - ExtUtils::MakeMaker 6.98
+This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
- [Added / configure requires]
- - ExtUtils::MakeMaker 6.30
+0.002001
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::Git::Contributors 0.006
 
+ [Changed / develop requires]
+ - Test::Kwalitee 1.12 → 1.21
+
+ [Changed / develop suggests]
+ - Dist::Zilla::App::Command::bakeini 0.001000 → 0.001002
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.015000 → 2.017002
+
+0.002000 2014-06-03T06:53:36Z
  [Added / develop requires]
  - Dist::Zilla::Plugin::Authority 1.006
  - Dist::Zilla::Plugin::AutoPrereqs
@@ -52,34 +59,8 @@
  - Dist::Zilla::App::Command::bakeini 0.001000
  - Dist::Zilla::PluginBundle::Author::KENTNL 2.015000
 
- [Added / runtime requires]
- - utf8
-
- [Added / test recommends]
- - CPAN::Meta
- - CPAN::Meta::Requirements 2.120900
- - ExtUtils::MakeMaker 6.98
- - Test::More 1.001003
-
- [Added / test requires]
- - ExtUtils::MakeMaker
- - File::Spec::Functions
- - List::Util
-
  [Changed / develop requires]
  - Test::Kwalitee 1.08 → 1.12
-
- [Changed / runtime requires]
- - perl 5.006 → 5.008
-
- [Changed / test requires]
- - Test::More 0.98 → 0.89
-
- [Removed / build requires]
- - Module::Build 0.4007
-
- [Removed / configure requires]
- - Module::Build 0.4007
 
  [Removed / develop requires]
  - Dist::Zilla::PluginBundle::Author::KENTNL 2.000000
@@ -87,11 +68,6 @@
 
  [Removed / develop suggests]
  - Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.3.0
-
- [Removed / test requires]
- - File::Spec
- - IO::Handle
- - IPC::Open3
 
 0.001001 2013-10-12T07:07:17Z
  [Changed / develop requires]

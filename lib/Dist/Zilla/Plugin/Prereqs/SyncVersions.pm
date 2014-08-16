@@ -7,48 +7,13 @@ package Dist::Zilla::Plugin::Prereqs::SyncVersions;
 
 # ABSTRACT: DEPRECATED Homogenize prerequisites so dependency versions are consistent
 
-our $VERSION = '0.002000';
+our $VERSION = '0.002001';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( has with around );
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
 with 'Dist::Zilla::Role::PrereqSource';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -287,7 +252,7 @@ Dist::Zilla::Plugin::Prereqs::SyncVersions - DEPRECATED Homogenize prerequisites
 
 =head1 VERSION
 
-version 0.002000
+version 0.002001
 
 =head1 DEPRECATED
 
