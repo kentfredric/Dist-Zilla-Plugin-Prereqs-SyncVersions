@@ -1,11 +1,12 @@
 Release history for Dist-Zilla-Plugin-Prereqs-SyncVersions
 
-0.002001 2014-08-16T20:10:48Z
+0.002001 2014-08-16T20:14:31Z
  [00 Trivial]
  - CPANDAY!
  - no code changes.
  - tests updated.
  - metadata updated.
+ - whitespace reduced.
 
  [Dependencies::Stats]
  - Dependencies changed since 0.002000, see misc/*.deps* for details
@@ -16,6 +17,9 @@ Release history for Dist-Zilla-Plugin-Prereqs-SyncVersions
  [Metadata]
  - move to kentnl org.
  - show 1x contributor.
+
+ [Misc]
+ - Improve source side POD to reduce build side whitespace.
 
  [Tests]
  - update Test::ReportPrereqs
