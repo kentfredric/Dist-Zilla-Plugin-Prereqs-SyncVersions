@@ -1,6 +1,8 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
 0.002002
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::CopyFilesFromBuild
 
 0.002001 2014-08-16T20:14:31Z
  [Added / develop requires]
