@@ -7,7 +7,10 @@ VERSION
 
 DEPRECATED
     This module is deprecated as equivalent behavior is now part of
-    "Dist::Zilla"
+    "Dist::Zilla".
+
+    However, this module will keep maintained for anyone who wants this
+    behaviour without upgrading to "DZil 5"
 
 SYNOPSIS
         ; <bunch of metaprereq providing modules>

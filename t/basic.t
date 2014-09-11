@@ -16,11 +16,24 @@ $test->add_file(
   simple_ini(
     [ 'Prereqs', 'TestRequires',    { 'Foo' => '6.0' } ],    #
     [ 'Prereqs', 'RuntimeRequires', { 'Foo' => '5.0' } ],    #
-    ['Prereqs::SyncVersions'],                               #
+    ['Prereqs::SyncVersions'],
   )
 );
 $test->build_ok;
-
+$test->prereqs_deeply(
+  {
+    'runtime' => {
+      'requires' => {
+        'Foo' => '6.0'
+      }
+    },
+    'test' => {
+      'requires' => {
+        'Foo' => '6.0'
+      }
+    }
+  }
+);
 note explain $test->distmeta;
 note explain $test->builder->log_messages;
 
