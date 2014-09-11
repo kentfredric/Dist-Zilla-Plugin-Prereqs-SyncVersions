@@ -22,5 +22,6 @@ $test->add_file(
 $test->build_ok;
 
 note explain $test->distmeta;
+note explain $test->builder->log_messages;
 
 done_testing;
