@@ -16,6 +16,7 @@ $test->add_file(
   simple_ini(
     [ 'Prereqs', 'TestRequires',    { 'Foo' => '6.0' } ],    #
     [ 'Prereqs', 'RuntimeRequires', { 'Foo' => '5.0' } ],    #
+    ['Prereqs::SyncVersions'],                               #
   )
 );
 $test->build_ok;
