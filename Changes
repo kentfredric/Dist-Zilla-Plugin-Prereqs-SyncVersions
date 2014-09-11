@@ -3,6 +3,7 @@ Release history for Dist-Zilla-Plugin-Prereqs-SyncVersions
 {{$NEXT}}
  [00 Minor]
  - use dump_config
+ - metadata -> author = kentnl
 
  [Dependencies::Stats]
  - Dependencies changed since 0.002001, see misc/*.deps* for details

@@ -105,7 +105,7 @@ This is if you want to be granular about how you specify phase/relations to proc
 
 # AUTHOR
 
-Kent Fredric <kentfredric@gmail.com>
+Kent Fredric <kentnl@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
