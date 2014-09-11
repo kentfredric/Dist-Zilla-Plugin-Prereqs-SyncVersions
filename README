@@ -3,11 +3,14 @@ NAME
     prerequisites so dependency versions are consistent
 
 VERSION
-    version 0.002001
+    version 0.003000
 
 DEPRECATED
     This module is deprecated as equivalent behavior is now part of
-    "Dist::Zilla"
+    "Dist::Zilla".
+
+    However, this module will keep maintained for anyone who wants this
+    behavior without upgrading to "DZil 5"
 
 SYNOPSIS
         ; <bunch of metaprereq providing modules>
@@ -105,7 +108,7 @@ ATTRIBUTES
         applyto = test.suggests
 
 AUTHOR
-    Kent Fredric <kentfredric@gmail.com>
+    Kent Fredric <kentnl@cpan.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2014 by Kent Fredric

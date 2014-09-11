@@ -1,5 +1,21 @@
 Release history for Dist-Zilla-Plugin-Prereqs-SyncVersions
 
+0.003000 2014-09-11T04:07:09Z
+ [00 Minor]
+ - use dump_config
+ - metadata -> author = kentnl
+ - Add tests
+
+ [Dependencies::Stats]
+ - Dependencies changed since 0.002001, see misc/*.deps* for details
+ - develop: +2 (suggests: ↑1)
+ - runtime: +1
+ - test: +2 (recommends: ↑1)
+
+ [Tests]
+ - Basic functionality tests added.
+ - Tests confirmed to keep behaviour consistent on 4.x
+
 0.002001 2014-08-16T20:14:31Z
  [00 Trivial]
  - CPANDAY!

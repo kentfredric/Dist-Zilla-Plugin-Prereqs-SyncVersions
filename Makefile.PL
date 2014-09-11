@@ -11,7 +11,7 @@ use ExtUtils::MakeMaker ;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "DEPRECATED Homogenize prerequisites so dependency versions are consistent",
-  "AUTHOR" => "Kent Fredric <kentfredric\@gmail.com>",
+  "AUTHOR" => "Kent Fredric <kentnl\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
   },
@@ -21,6 +21,7 @@ my %WriteMakefileArgs = (
   "NAME" => "Dist::Zilla::Plugin::Prereqs::SyncVersions",
   "PREREQ_PM" => {
     "Dist::Zilla::Role::PrereqSource" => 0,
+    "Dist::Zilla::Util::ConfigDumper" => 0,
     "Moose" => 0,
     "MooseX::Types::Moose" => 0,
     "strict" => 0,
@@ -29,11 +30,13 @@ my %WriteMakefileArgs = (
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
+    "Dist::Zilla::Util::Test::KENTNL" => "1.003002",
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
+    "Test::DZil" => 0,
     "Test::More" => "0.89"
   },
-  "VERSION" => "0.002001",
+  "VERSION" => "0.003000",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
@@ -42,10 +45,13 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "Dist::Zilla::Role::PrereqSource" => 0,
+  "Dist::Zilla::Util::ConfigDumper" => 0,
+  "Dist::Zilla::Util::Test::KENTNL" => "1.003002",
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
   "Moose" => 0,
   "MooseX::Types::Moose" => 0,
+  "Test::DZil" => 0,
   "Test::More" => "0.89",
   "strict" => 0,
   "utf8" => 0,

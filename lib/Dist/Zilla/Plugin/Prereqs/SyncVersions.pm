@@ -7,12 +7,13 @@ package Dist::Zilla::Plugin::Prereqs::SyncVersions;
 
 # ABSTRACT: DEPRECATED Homogenize prerequisites so dependency versions are consistent
 
-our $VERSION = '0.002001';
+our $VERSION = '0.003000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( has with around );
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
+use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 with 'Dist::Zilla::Role::PrereqSource';
 
 
@@ -179,17 +180,7 @@ sub _build__applyto_list {
 
 sub mvp_multivalue_args { return qw( applyto applyto_relation applyto_phase ) }
 
-around dump_config => sub {
-  my ( $orig, $self ) = @_;
-  my $config      = $self->$orig;
-  my $this_config = {
-    applyto_phase    => $self->applyto_phase,
-    applyto_relation => $self->applyto_relation,
-    applyto          => $self->applyto,
-  };
-  $config->{ q{} . __PACKAGE__ } = $this_config;
-  return $config;
-};
+around dump_config => config_dumper( __PACKAGE__, qw( applyto_phase applyto_relation applyto ) );
 
 sub _foreach_phase_rel {
   my ( $self, $prereqs, $callback ) = @_;
@@ -252,11 +243,13 @@ Dist::Zilla::Plugin::Prereqs::SyncVersions - DEPRECATED Homogenize prerequisites
 
 =head1 VERSION
 
-version 0.002001
+version 0.003000
 
 =head1 DEPRECATED
 
-This module is deprecated as equivalent behavior is now part of C<Dist::Zilla>
+This module is deprecated as equivalent behavior is now part of C<Dist::Zilla>.
+
+However, this module will keep maintained for anyone who wants this behavior without upgrading to C<DZil 5>
 
 =head1 SYNOPSIS
 
@@ -365,7 +358,7 @@ This is if you want to be granular about how you specify phase/relations to proc
 
 =head1 AUTHOR
 
-Kent Fredric <kentfredric@gmail.com>
+Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

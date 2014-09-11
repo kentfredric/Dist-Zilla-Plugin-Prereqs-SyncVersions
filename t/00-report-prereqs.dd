@@ -9,10 +9,12 @@ do { my $x = {
                       },
        'develop' => {
                       'requires' => {
+                                      'Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes' => '0.001001',
                                       'Dist::Zilla::Plugin::Authority' => '1.006',
                                       'Dist::Zilla::Plugin::AutoPrereqs' => '0',
                                       'Dist::Zilla::Plugin::BumpVersionAfterRelease' => '0',
                                       'Dist::Zilla::Plugin::ConfirmRelease' => '0',
+                                      'Dist::Zilla::Plugin::CopyFilesFromBuild' => '0',
                                       'Dist::Zilla::Plugin::EOLTests' => '0',
                                       'Dist::Zilla::Plugin::Git::Check' => '0',
                                       'Dist::Zilla::Plugin::Git::Commit' => '0',
@@ -60,12 +62,13 @@ do { my $x = {
                                     },
                       'suggests' => {
                                       'Dist::Zilla::App::Command::bakeini' => '0.001002',
-                                      'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.017002'
+                                      'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.020001'
                                     }
                     },
        'runtime' => {
                       'requires' => {
                                       'Dist::Zilla::Role::PrereqSource' => '0',
+                                      'Dist::Zilla::Util::ConfigDumper' => '0',
                                       'Moose' => '0',
                                       'MooseX::Types::Moose' => '0',
                                       'perl' => '5.008',
@@ -79,11 +82,13 @@ do { my $x = {
                    'recommends' => {
                                      'CPAN::Meta' => '2.120900',
                                      'ExtUtils::MakeMaker' => '6.98',
-                                     'Test::More' => '1.001003'
+                                     'Test::More' => '1.001006'
                                    },
                    'requires' => {
+                                   'Dist::Zilla::Util::Test::KENTNL' => '1.003002',
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec' => '0',
+                                   'Test::DZil' => '0',
                                    'Test::More' => '0.89'
                                  }
                  }
