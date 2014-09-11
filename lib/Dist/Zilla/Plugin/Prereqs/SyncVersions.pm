@@ -249,7 +249,7 @@ version 0.002002
 
 This module is deprecated as equivalent behavior is now part of C<Dist::Zilla>.
 
-However, this module will keep maintained for anyone who wants this behaviour without upgrading to C<DZil 5>
+However, this module will keep maintained for anyone who wants this behavior without upgrading to C<DZil 5>
 
 =head1 SYNOPSIS
 

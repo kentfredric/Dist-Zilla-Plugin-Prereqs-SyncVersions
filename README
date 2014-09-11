@@ -10,7 +10,7 @@ DEPRECATED
     "Dist::Zilla".
 
     However, this module will keep maintained for anyone who wants this
-    behaviour without upgrading to "DZil 5"
+    behavior without upgrading to "DZil 5"
 
 SYNOPSIS
         ; <bunch of metaprereq providing modules>
