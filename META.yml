@@ -21,6 +21,7 @@ provides:
     version: '0.002002'
 requires:
   Dist::Zilla::Role::PrereqSource: '0'
+  Dist::Zilla::Util::ConfigDumper: '0'
   Moose: '0'
   MooseX::Types::Moose: '0'
   perl: '5.008'
@@ -83,6 +84,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::UploadToCPAN: '5.020'
     Dist::Zilla::PluginBundle::Author::KENTNL: '2.020001'
     Dist::Zilla::Role::PrereqSource: '5.020'
+    Dist::Zilla::Util::ConfigDumper: '0.003004'
     ExtUtils::MakeMaker: '6.98'
     File::Spec: '3.49'
     Moose: '2.1211'
