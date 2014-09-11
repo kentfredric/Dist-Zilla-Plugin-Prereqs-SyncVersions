@@ -111,7 +111,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::Prereqs::SyncVersions" : {
          "file" : "lib/Dist/Zilla/Plugin/Prereqs/SyncVersions.pm",
-         "version" : "0.003000"
+         "version" : "0.003001"
       }
    },
    "release_status" : "stable",
@@ -126,7 +126,7 @@
          "web" : "https://github.com/kentnl/Dist-Zilla-Plugin-Prereqs-SyncVersions"
       }
    },
-   "version" : "0.003000",
+   "version" : "0.003001",
    "x_BuiltWith" : {
       "modules" : {
          "CPAN::Meta" : "2.142060",
@@ -652,7 +652,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "0.003000-source",
+                  "tag" : "0.003001-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -723,7 +723,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "0.003000",
+                  "tag" : "0.003001",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
