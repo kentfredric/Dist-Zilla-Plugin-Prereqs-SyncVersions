@@ -4,11 +4,13 @@ Dist::Zilla::Plugin::Prereqs::SyncVersions - DEPRECATED Homogenize prerequisites
 
 # VERSION
 
-version 0.002002
+version 0.003000
 
 # DEPRECATED
 
-This module is deprecated as equivalent behavior is now part of `Dist::Zilla`
+This module is deprecated as equivalent behavior is now part of `Dist::Zilla`.
+
+However, this module will keep maintained for anyone who wants this behavior without upgrading to `DZil 5`
 
 # SYNOPSIS
 

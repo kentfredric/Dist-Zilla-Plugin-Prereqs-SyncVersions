@@ -7,7 +7,7 @@ package Dist::Zilla::Plugin::Prereqs::SyncVersions;
 
 # ABSTRACT: DEPRECATED Homogenize prerequisites so dependency versions are consistent
 
-our $VERSION = '0.002002';
+our $VERSION = '0.003000';
 
 # AUTHORITY
 
@@ -233,7 +233,9 @@ no Moose;
 
 =head1 DEPRECATED
 
-This module is deprecated as equivalent behavior is now part of C<Dist::Zilla>
+This module is deprecated as equivalent behavior is now part of C<Dist::Zilla>.
+
+However, this module will keep maintained for anyone who wants this behavior without upgrading to C<DZil 5>
 
 =head1 SYNOPSIS
 
