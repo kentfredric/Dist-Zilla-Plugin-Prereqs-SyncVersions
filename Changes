@@ -1,8 +1,9 @@
 Release history for Dist-Zilla-Plugin-Prereqs-SyncVersions
 
-0.002002 2014-09-11T02:55:48Z
+0.002002 2014-09-11T03:00:57Z
  [00 Minor]
  - use dump_config
+ - metadata -> author = kentnl
 
  [Dependencies::Stats]
  - Dependencies changed since 0.002001, see misc/*.deps* for details
