@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Plugin-Prereqs-SyncVersions
 
 {{$NEXT}}
+
+0.003000 2014-09-11T04:07:09Z
  [00 Minor]
  - use dump_config
  - metadata -> author = kentnl
