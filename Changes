@@ -1,5 +1,16 @@
 Release history for Dist-Zilla-Plugin-Prereqs-SyncVersions
 
+0.003001 2015-02-04T09:48:39Z ae594be
+ [Dependencies::Stats]
+ - Dependencies changed since 0.003000, see misc/*.deps* for details
+ - configure: +1 (recommends: ↑1)
+ - develop: +10 ↑2 -2 (recommends: +1, suggests: ↑2)
+ - runtime: ↓1 -1 (recommends: +1)
+ - test: +1 (recommends: ↑1 ↓1)
+
+ [Meta]
+ - Add x_deprecated field
+
 0.003000 2014-09-11T04:07:09Z
  [00 Minor]
  - use dump_config

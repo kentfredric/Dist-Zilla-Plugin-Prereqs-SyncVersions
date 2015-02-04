@@ -1,13 +1,12 @@
-use 5.008;    # pragma utf8
+use 5.006;    # our
 use strict;
 use warnings;
-use utf8;
 
 package Dist::Zilla::Plugin::Prereqs::SyncVersions;
 
-# ABSTRACT: DEPRECATED Homogenize prerequisites so dependency versions are consistent
+# ABSTRACT: (DEPRECATED) Homogenize prerequisites so dependency versions are consistent
 
-our $VERSION = '0.003000';
+our $VERSION = '0.003001';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -182,6 +181,9 @@ sub mvp_multivalue_args { return qw( applyto applyto_relation applyto_phase ) }
 
 around dump_config => config_dumper( __PACKAGE__, qw( applyto_phase applyto_relation applyto ) );
 
+__PACKAGE__->meta->make_immutable;
+no Moose;
+
 sub _foreach_phase_rel {
   my ( $self, $prereqs, $callback ) = @_;
   for my $applyto ( @{ $self->_applyto_list } ) {
@@ -226,9 +228,6 @@ sub register_prereqs {
   return $prereqs;
 }
 
-__PACKAGE__->meta->make_immutable;
-no Moose;
-
 1;
 
 __END__
@@ -239,11 +238,11 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Prereqs::SyncVersions - DEPRECATED Homogenize prerequisites so dependency versions are consistent
+Dist::Zilla::Plugin::Prereqs::SyncVersions - (DEPRECATED) Homogenize prerequisites so dependency versions are consistent
 
 =head1 VERSION
 
-version 0.003000
+version 0.003001
 
 =head1 DEPRECATED
 
@@ -362,7 +361,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2015 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
