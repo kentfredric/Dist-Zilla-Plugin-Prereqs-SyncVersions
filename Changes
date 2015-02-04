@@ -1,11 +1,11 @@
 Release history for Dist-Zilla-Plugin-Prereqs-SyncVersions
 
-0.003001 2015-02-04T09:47:13Z abdd7d9
+0.003001 2015-02-04T09:48:39Z ae594be
  [Dependencies::Stats]
  - Dependencies changed since 0.003000, see misc/*.deps* for details
  - configure: +1 (recommends: ↑1)
  - develop: +10 ↑2 -2 (recommends: +1, suggests: ↑2)
- - runtime: (recommends: +1)
+ - runtime: ↓1 -1 (recommends: +1)
  - test: +1 (recommends: ↑1 ↓1)
 
  [Meta]
