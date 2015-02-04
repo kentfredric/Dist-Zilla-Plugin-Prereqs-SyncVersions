@@ -20,6 +20,8 @@ copyfiles         = LICENSE
 srcreadme         = mkdn
 twitter_extra_hash_tags = #distzilla
 
+[Deprecated]
+
 ; version_major     = 0
 ; version_minor     = 1
 ; the following data denotes when this minor was minted

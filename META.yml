@@ -51,7 +51,6 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Role::Bootstrap:
           distname: Dist-Zilla-Plugin-Prereqs-SyncVersions
-          fallback: '1'
           try_built: '1'
       name: Bootstrap::lib
       version: '1.001000'
@@ -517,6 +516,10 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/::Role::BundleDeps'
       version: '5.031'
     -
+      class: Dist::Zilla::Plugin::Deprecated
+      name: Deprecated
+      version: '0.002'
+    -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
       version: '5.031'
@@ -560,3 +563,4 @@ x_Dist_Zilla:
 x_authority: cpan:KENTNL
 x_contributors:
   - 'Сергей Романов <sromanov-dev@yandex.ru>'
+x_deprecated: 1

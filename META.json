@@ -37,6 +37,7 @@
             "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0",
             "Dist::Zilla::Plugin::ConfirmRelease" : "0",
             "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0",
+            "Dist::Zilla::Plugin::Deprecated" : "0",
             "Dist::Zilla::Plugin::Git::Check" : "0",
             "Dist::Zilla::Plugin::Git::Commit" : "0",
             "Dist::Zilla::Plugin::Git::CommitBuild" : "0",
@@ -155,7 +156,6 @@
             "config" : {
                "Dist::Zilla::Role::Bootstrap" : {
                   "distname" : "Dist-Zilla-Plugin-Prereqs-SyncVersions",
-                  "fallback" : "1",
                   "try_built" : "1"
                }
             },
@@ -764,6 +764,11 @@
             "version" : "5.031"
          },
          {
+            "class" : "Dist::Zilla::Plugin::Deprecated",
+            "name" : "Deprecated",
+            "version" : "0.002"
+         },
+         {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":InstallModules",
             "version" : "5.031"
@@ -820,6 +825,7 @@
    "x_authority" : "cpan:KENTNL",
    "x_contributors" : [
       "Сергей Романов <sromanov-dev@yandex.ru>"
-   ]
+   ],
+   "x_deprecated" : 1
 }
 
