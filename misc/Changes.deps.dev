@@ -8,6 +8,7 @@ This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and 
  - Dist::Zilla 5
  - Dist::Zilla::Plugin::Author::KENTNL::TravisCI
  - Dist::Zilla::Plugin::Bootstrap::lib
+ - Dist::Zilla::Plugin::Deprecated
  - Dist::Zilla::Plugin::Prereqs::AuthorDeps
  - Dist::Zilla::Plugin::Prereqs::Upgrade
  - Dist::Zilla::Plugin::Readme::Brief
