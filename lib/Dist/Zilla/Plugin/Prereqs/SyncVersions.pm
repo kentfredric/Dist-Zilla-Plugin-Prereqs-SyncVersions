@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::Prereqs::SyncVersions;
 
-# ABSTRACT: DEPRECATED Homogenize prerequisites so dependency versions are consistent
+# ABSTRACT: (DEPRECATED) Homogenize prerequisites so dependency versions are consistent
 
 our $VERSION = '0.003001';
 
@@ -239,7 +239,7 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Prereqs::SyncVersions - DEPRECATED Homogenize prerequisites so dependency versions are consistent
+Dist::Zilla::Plugin::Prereqs::SyncVersions - (DEPRECATED) Homogenize prerequisites so dependency versions are consistent
 
 =head1 VERSION
 

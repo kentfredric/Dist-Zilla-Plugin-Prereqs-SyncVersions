@@ -1,5 +1,5 @@
 {
-   "abstract" : "DEPRECATED Homogenize prerequisites so dependency versions are consistent",
+   "abstract" : "(DEPRECATED) Homogenize prerequisites so dependency versions are consistent",
    "author" : [
       "Kent Fredric <kentnl@cpan.org>"
    ],
