@@ -1,6 +1,6 @@
 # NAME
 
-Dist::Zilla::Plugin::Prereqs::SyncVersions - DEPRECATED Homogenize prerequisites so dependency versions are consistent
+Dist::Zilla::Plugin::Prereqs::SyncVersions - (DEPRECATED) Homogenize prerequisites so dependency versions are consistent
 
 # VERSION
 
