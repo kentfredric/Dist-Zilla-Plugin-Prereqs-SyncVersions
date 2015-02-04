@@ -51,8 +51,8 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Role::Bootstrap:
           distname: Dist-Zilla-Plugin-Prereqs-SyncVersions
+          fallback: '1'
           try_built: '1'
-          try_built_method: mtime
       name: Bootstrap::lib
       version: '1.001000'
     -
