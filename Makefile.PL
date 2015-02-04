@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use 5.008;
+use 5.006;
 
 use ExtUtils::MakeMaker;
 
@@ -18,7 +18,7 @@ my %WriteMakefileArgs = (
   "DISTNAME" => "Dist-Zilla-Plugin-Prereqs-SyncVersions",
   "EXE_FILES" => [],
   "LICENSE" => "perl",
-  "MIN_PERL_VERSION" => "5.008",
+  "MIN_PERL_VERSION" => "5.006",
   "NAME" => "Dist::Zilla::Plugin::Prereqs::SyncVersions",
   "PREREQ_PM" => {
     "Dist::Zilla::Role::PrereqSource" => 0,
@@ -26,7 +26,6 @@ my %WriteMakefileArgs = (
     "Moose" => 0,
     "MooseX::Types::Moose" => 0,
     "strict" => 0,
-    "utf8" => 0,
     "version" => 0,
     "warnings" => 0
   },
@@ -55,7 +54,6 @@ my %FallbackPrereqs = (
   "Test::DZil" => 0,
   "Test::More" => "0.89",
   "strict" => 0,
-  "utf8" => 0,
   "version" => 0,
   "warnings" => 0
 );
