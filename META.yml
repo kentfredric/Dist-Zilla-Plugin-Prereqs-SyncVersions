@@ -27,7 +27,6 @@ recommends:
   Moose: '2.000'
 requires:
   Dist::Zilla::Role::PrereqSource: '0'
-  Dist::Zilla::Util::ConfigDumper: '0'
   Moose: '0'
   MooseX::Types::Moose: '0'
   perl: '5.006'

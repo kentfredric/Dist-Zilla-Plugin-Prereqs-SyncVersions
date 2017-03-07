@@ -12,7 +12,6 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( has with around );
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
-use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 with 'Dist::Zilla::Role::PrereqSource';
 
 
@@ -179,7 +178,20 @@ sub _build__applyto_list {
 
 sub mvp_multivalue_args { return qw( applyto applyto_relation applyto_phase ) }
 
-around dump_config => config_dumper( __PACKAGE__, qw( applyto_phase applyto_relation applyto ) );
+around dump_config => sub {
+  my ( $orig, $self, @args ) = @_;
+  my $config = $self->$orig(@args);
+  my $localconf = $config->{ +__PACKAGE__ } = {};
+
+  $localconf->{applyto_phase}    = $self->applyto_phase;
+  $localconf->{applyto_relation} = $self->applyto_relation;
+  $localconf->{applyto}          = $self->applyto;
+
+  $localconf->{ q[$] . __PACKAGE__ . '::VERSION' } = $VERSION
+    unless __PACKAGE__ eq ref $self;
+
+  return $config;
+};
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
