@@ -6,13 +6,12 @@ package Dist::Zilla::Plugin::Prereqs::SyncVersions;
 
 # ABSTRACT: (DEPRECATED) Homogenize prerequisites so dependency versions are consistent
 
-our $VERSION = '0.003001';
+our $VERSION = '0.003002';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( has with around );
 use MooseX::Types::Moose qw( HashRef ArrayRef Str );
-use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 with 'Dist::Zilla::Role::PrereqSource';
 
 
@@ -179,7 +178,20 @@ sub _build__applyto_list {
 
 sub mvp_multivalue_args { return qw( applyto applyto_relation applyto_phase ) }
 
-around dump_config => config_dumper( __PACKAGE__, qw( applyto_phase applyto_relation applyto ) );
+around dump_config => sub {
+  my ( $orig, $self, @args ) = @_;
+  my $config = $self->$orig(@args);
+  my $localconf = $config->{ +__PACKAGE__ } = {};
+
+  $localconf->{applyto_phase}    = $self->applyto_phase;
+  $localconf->{applyto_relation} = $self->applyto_relation;
+  $localconf->{applyto}          = $self->applyto;
+
+  $localconf->{ q[$] . __PACKAGE__ . '::VERSION' } = $VERSION
+    unless __PACKAGE__ eq ref $self;
+
+  return $config;
+};
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
@@ -242,7 +254,7 @@ Dist::Zilla::Plugin::Prereqs::SyncVersions - (DEPRECATED) Homogenize prerequisit
 
 =head1 VERSION
 
-version 0.003001
+version 0.003002
 
 =head1 DEPRECATED
 
@@ -361,7 +373,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2015 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2017 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -7,20 +7,24 @@ use Test::More;
 # CREATED: 09/11/14 15:02:38 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: Basic do-someting test.
 
-use Dist::Zilla::Util::Test::KENTNL 1.003002 qw( dztest );
-use Test::DZil qw( simple_ini );
+use Test::DZil qw( simple_ini Builder);
 
-my $test = dztest();
-$test->add_file(
-  'dist.ini',
-  simple_ini(
-    [ 'Prereqs', 'TestRequires',    { 'Foo' => '6.0' } ],    #
-    [ 'Prereqs', 'RuntimeRequires', { 'Foo' => '5.0' } ],    #
-    ['Prereqs::SyncVersions'],
-  )
+my $zilla = Builder->from_config(
+  { dist_root => 'invalid' },
+  {
+    add_files => {
+      'source/dist.ini' => simple_ini(
+        [ 'Prereqs', 'TestRequires',    { 'Foo' => '6.0' } ],    #
+        [ 'Prereqs', 'RuntimeRequires', { 'Foo' => '5.0' } ],    #
+        ['Prereqs::SyncVersions'],
+      )
+    }
+  }
 );
-$test->build_ok;
-$test->prereqs_deeply(
+$zilla->chrome->logger->set_debug(1);
+$zilla->build;
+is_deeply(
+  $zilla->distmeta->{prereqs},
   {
     'runtime' => {
       'requires' => {
@@ -32,9 +36,10 @@ $test->prereqs_deeply(
         'Foo' => '6.0'
       }
     }
-  }
+  },
+  "Prereqs match expected"
 );
-note explain $test->distmeta;
-note explain $test->builder->log_messages;
+note explain $zilla->distmeta;
+note explain $zilla->log_messages;
 
 done_testing;
