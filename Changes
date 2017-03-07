@@ -1,5 +1,7 @@
 Release history for Dist-Zilla-Plugin-Prereqs-SyncVersions
 
+0.003003 2017-03-07T15:55:00Z 4ba8f17
+
 0.003002 2017-03-07T15:53:19Z 8f10a03
  - Bugfix: Avoid test failures under -Ddefault_inc_excludes_dot
  - Remove use of ConfigDumper util

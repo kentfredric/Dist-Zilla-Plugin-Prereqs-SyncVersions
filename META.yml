@@ -21,7 +21,7 @@ name: Dist-Zilla-Plugin-Prereqs-SyncVersions
 provides:
   Dist::Zilla::Plugin::Prereqs::SyncVersions:
     file: lib/Dist/Zilla/Plugin/Prereqs/SyncVersions.pm
-    version: '0.003002'
+    version: '0.003003'
 recommends:
   Moose: '2.000'
 requires:
@@ -36,4 +36,4 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-Plugin-Prereqs-SyncVersions/issues
   homepage: https://github.com/kentnl/Dist-Zilla-Plugin-Prereqs-SyncVersions
   repository: https://github.com/kentnl/Dist-Zilla-Plugin-Prereqs-SyncVersions.git
-version: '0.003002'
+version: '0.003003'

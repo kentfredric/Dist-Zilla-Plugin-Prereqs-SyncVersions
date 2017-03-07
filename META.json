@@ -131,7 +131,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::Prereqs::SyncVersions" : {
          "file" : "lib/Dist/Zilla/Plugin/Prereqs/SyncVersions.pm",
-         "version" : "0.003002"
+         "version" : "0.003003"
       }
    },
    "release_status" : "stable",
@@ -146,7 +146,7 @@
          "web" : "https://github.com/kentnl/Dist-Zilla-Plugin-Prereqs-SyncVersions"
       }
    },
-   "version" : "0.003002",
+   "version" : "0.003003",
    "x_BuiltWith" : {
       "external_file" : "misc/built_with.json"
    },
@@ -669,7 +669,7 @@
                   "branch" : null,
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "0.003002-source",
+                  "tag" : "0.003003-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v"
                },
@@ -763,7 +763,7 @@
                   "branch" : "releases",
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "0.003002",
+                  "tag" : "0.003003",
                   "tag_format" : "%v",
                   "tag_message" : "v%v"
                },
