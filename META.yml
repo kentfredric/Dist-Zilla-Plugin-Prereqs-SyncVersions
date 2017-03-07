@@ -3,7 +3,6 @@ abstract: '(DEPRECATED) Homogenize prerequisites so dependency versions are cons
 author:
   - 'Kent Fredric <kentnl@cpan.org>'
 build_requires:
-  Dist::Zilla::Util::Test::KENTNL: '1.003002'
   ExtUtils::MakeMaker: '0'
   File::Spec: '0'
   Test::DZil: '0'
